@@ -1,0 +1,178 @@
+<swiper class="swiper-container" autoplay interval="3000">
+    <swiper-item>
+        <view class="top_info_box" bindtap="showPopup" data-id="popup1">
+            <view class="top_desc_box">
+                <text>咨询指南</text>
+            </view>
+            <block wx:for="{{2}}" wx:key="index">
+                <view class="middle_desc_box">
+                    <view class="dot"></view>
+                    <view class="info_content">
+                        <text>{{adviceText[index]}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </swiper-item>
+    <swiper-item>
+        <view class="top_info_box" bindtap="showPopup" data-id="popup2">
+            <view class="top_desc_box">
+                <text>通知公告</text>
+            </view>
+            <block wx:for="{{2}}" wx:key="index">
+                <view class="middle_desc_box">
+                    <view class="dot"></view>
+                    <view class="info_content">
+                        <text>{{noticeText[index]}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </swiper-item>
+</swiper>
+<van-notice-bar background="#ECF9FF" color='#1989FA' scrollable left-icon="volume-o" text="如您需要进行育人讨论，可通过论坛进行交流~" />
+
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-titles text-blue"></text>今日在线
+    </view>
+</view>
+
+<view class="teacher_box">
+    <view class="top_content">
+        <view class="left_image">
+            <image src="{{onLineteacherData.useravatar}}" mode="" />
+        </view>
+        <view class="middle_desc">
+            <view class="top_name">
+                <view class="name">
+                    <text>{{onLineteacherData.username}}</text>
+                </view>
+            </view>
+            <view class="middle_info">
+                <block wx:for="{{onLineteacherData.icon}}" wx:key="index">
+                    <view class='cu-tag radius line-green'>{{item}}</view>
+                </block>
+            </view>
+        </view>
+        <view class="right_desc" open-type="contact">
+            <button class="bg-cyan" bindtap="showPopup" data-id="popup3" data-name="{{onLineteacherData.username}}" data-time="{{onLineteacherData.onlinetime}}" data-desc="{{onLineteacherData.desc}}">
+                <text>教师简介</text>
+            </button>
+            <button style="margin-top: 5rpx;" class="bg-blue"  bindtap="startChat" data-item="{{onLineteacherData}}">
+                <text>立即咨询</text>
+            </button>
+        </view>
+
+
+    </view>
+</view>
+
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-titles text-blue"></text>专家列表
+    </view>
+    <view class="right_desc">
+        <button size="mini" style="margin-right: 30rpx;" bindtap="showPopup" data-id="popup5" class=" sm round bg-green">我的预约</button>
+    </view>
+</view>
+<block wx:for="{{teacherData}}" wx:key="index">
+    <view class="teacher_box">
+        <view class="top_content">
+            <view class="left_image">
+                <image src="{{item.useravatar}}" mode="" />
+            </view>
+            <view class="middle_desc">
+                <view class="top_name">
+                    <view class="name">
+                        <text>{{item.username}}</text>
+                    </view>
+                </view>
+                <view class="middle_info">
+                    <block wx:for="{{item.icon}}" wx:key="index">
+                        <view class='cu-tag radius line-green'>{{item}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="right_desc">
+                <button class=" sm round bg-cyan" bindtap="showPopup" data-id="popup3" data-name="{{item.username}}" data-time="{{item.onlinetime}}" data-desc="{{item.desc}}">教师简介</button>
+                <button style="margin-top: 5rpx;" bindtap="showPopup" data-id="popup4" data-name="{{item.username}}" data-desc="{{item.desc}}" class=" sm round bg-olive">预约咨询</button>
+            </view>
+        </view>
+
+    </view>
+</block>
+
+
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+        <van-collapse-item title="平台主要提供的咨询服务">
+
+        </van-collapse-item>
+        <van-collapse-item title="咨询服务时间安排">
+
+        </van-collapse-item>
+    </van-collapse>
+</van-popup>
+<van-popup show="{{popup2.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup2">
+    <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+        <van-collapse-item title="关于寒假期间开放线上心理咨询服务的公告！">
+
+        </van-collapse-item>
+        <van-collapse-item title="学校成功开展了线下咨询服务活动剪影。">
+
+        </van-collapse-item>
+    </van-collapse>
+</van-popup>
+<van-popup show="{{popup3.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup3">
+    <view class="notice_box">
+        <view class="notice_title">
+            <text>{{teacherName}}</text>
+        </view>
+        <view class="time_title">
+            <text> 在线时间：{{teacherTime}}</text>
+        </view>
+        <view class="line" style="border-bottom: 1px solid rgb(175, 175, 175);"></view>
+        <view class="detail" style="margin-top: 10rpx;" selectable="true" user-select>
+            <wxParse user-select nodes="{{teacherDesc}}"></wxParse>
+        </view>
+    </view>
+</van-popup>
+<van-popup show="{{popup4.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup4">
+    <view class="notice_box">
+        <view class="notice_title">
+            <text>请选择预约{{teacherName}}的咨询时间</text>
+        </view>
+        <van-datetime-picker data-name="{{teacherName}}" type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" bind:confirm="submit" />
+    </view>
+</van-popup>
+<van-popup show="{{popup5.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup5">
+    <view class="notice_box">
+        <view class="notice_title">
+            <text>您的预约</text>
+        </view>
+        <block wx:if="{{resverData.length>=1}}">
+            <block wx:for="{{resverData}}" wx:key="index">
+                <view class="resverbox">
+                    <view class="name">
+                        <view class="left_name">
+                            预约老师：{{item.reserveteacher}}
+                        </view>
+                        <view class="right_delete" bindtap="delete" data-id="{{item._id}}">
+                            <view class="delete">
+                                <text>取消预约</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="time">
+                        预约时间：{{item.time}}
+                    </view>
+                </view>
+
+            </block>
+        </block>
+        <block wx:if="{{reply.length==0}}">
+            <empty top="30" width="220" height="220" content="暂无预约"></empty>
+        </block>
+    </view>
+</van-popup>

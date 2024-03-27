@@ -1,0 +1,564 @@
+.classInfo {
+    margin: 0 auto;
+    margin-top: 5rpx;
+    background-color: #ffffff;
+}
+
+.classInfo .top_content {
+    display: flex;
+    margin-left: 10rpx;
+    padding: 15rpx;
+    align-items: center;
+
+}
+
+.classInfo .top_content image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.classInfo .top_content .className {
+    margin-left: 30rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.classInfo .middle_content {
+    display: flex;
+    margin-left: 10rpx;
+    align-items: center;
+    margin-top: 10rpx;
+}
+
+.classInfo .middle_content text {
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.classInfo .bottom_content {
+    display: flex;
+    padding: 10rpx;
+    align-items: center;
+}
+
+.bottom_content .left {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+
+.bottom_content .middle {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+
+.bottom_content .right {
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+
+.bottom_content .commen {
+    font-size: 50rpx;
+    font-family: sans-serif;
+    margin-left: 20rpx;
+}
+
+
+/* 横向功能 */
+.content_box {
+    margin: 0 auto;
+    margin-top: 10rpx;
+    width: 98%;
+}
+
+.cu-list {
+    border-radius: 22rpx;
+}
+
+.grid_images image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.grid_text {
+    font-size: 40rpx;
+    font-weight: 650;
+}
+
+/* 下面 */
+.desc_content_box {
+    width: 96%;
+    margin: 0 auto;
+    padding-bottom: 10rpx;
+
+}
+
+.desc_content {
+    width: 100%;
+    margin-top: 10rpx;
+
+}
+
+.desc_content .content_list {
+    background-color: #fff;
+    padding: 10rpx;
+
+}
+
+.content_list .content_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content_list .content_title .left_title {
+    display: flex;
+    align-items: center;
+    font-weight: 650;
+    font-family: serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 35rpx;
+}
+
+.content_list .content_title .left_title .icon_box_title {
+
+    border-top-left-radius: 22rpx;
+    border-top-right-radius: 22rpx;
+    border-bottom-right-radius: 22rpx;
+}
+
+.icon_box_title text {
+    font-size: 28rpx;
+    padding: 10rpx;
+    color: #fff;
+}
+
+.left_title_desc {
+    margin-left: 10rpx;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content_list .content_title .right_button image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+
+.content_list .middle_desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6F6F6F;
+    margin-top: 10rpx;
+}
+
+.middle_desc .left_send_name {
+    font-size:25rpx;
+    margin-left: 15rpx;
+}
+
+.middle_desc .right_send_time {
+    font-size:25rpx;
+    margin-right: 20rpx;
+}
+
+.bottom_desc {
+
+    padding-left: 15rpx;
+}
+
+.van-popup {
+    background-color: #F0F0F0 !important;
+    border-radius: 22rpx;
+}
+
+/* 联系人列表 */
+.people_list {
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 22rpx;
+    justify-content: space-between;
+}
+
+.people_list .left_image {
+    width: 20%;
+}
+
+.people_list .left_image image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.people_list .middle_name {
+    width: 60%;
+}
+
+.middle_name text {
+    font-size: 35rpx;
+    font-weight: 700;
+}
+
+.people_list .right_image {
+    margin-right: 30rpx;
+
+}
+
+.people_list .right_image image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+/* 班级相册 */
+
+.ablum_box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.class_ablum {
+    width: 48%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+    border-radius: 22rpx;
+}
+
+.class_ablum_box image {
+    width: 100%;
+    height: 320rpx;
+    border-top-left-radius: 22rpx;
+    border-top-right-radius: 22rpx;
+}
+
+.class_ablum_box text {
+    display: block;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.class_ablum button {
+    width: 180rpx;
+    height: 50rpx;
+    font-size: 28rpx;
+}
+
+/* 班费公开 */
+.total_money {
+    width: 100%;
+    height: 50rpx;
+    background-color: #fff;
+}
+
+.total_money text {
+    margin-left: 30rpx;
+    font-size: 35rpx;
+    font-weight: 700;
+}
+
+.moneny_content {
+    color: black;
+}
+
+.moneny_content .use_name .title {
+    font-size: 30rpx;
+}
+
+.moneny_content .use_money .title {
+    font-size: 30rpx;
+    color: red;
+}
+
+/* 优秀学生 */
+.best_student {
+    width: 98%;
+    margin: 0 auto;
+    background-color: #F0F0F0;
+
+}
+
+.best_stu_box {
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    background-color: #fff;
+    border-radius: 22rpx;
+    display: flex;
+}
+
+.best_student .left_image image {
+    width: 120rpx;
+    height: 120rpx;
+    padding: 10rpx;
+    margin-left: 20rpx;
+}
+
+.top_info {
+    display: flex;
+    align-items: center;
+}
+
+.best_stu_box .top_info .name {
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+    font-size: 30rpx;
+}
+
+.best_stu_box .top_info .card {
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+}
+
+.card .cu-tag {
+    font-size: 20rpx !important;
+    height: 40rpx !important;
+}
+
+.best_stu_box .middle_desc {
+    margin-left: 15rpx;
+    margin-top: 10rpx;
+    color: rgb(138, 138, 138);
+}
+
+/* 课程安排 */
+.range_title {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    border-radius: 50rpx;
+    height: 95rpx;
+    width: 90%;
+    align-items: center;
+    font-size: 35rpx;
+    background-color: #0ca1ce;
+}
+
+.range_title .range_left {
+    width: 30%;
+    margin-left: 50rpx;
+}
+
+.range_title .range_middle {
+    width: 40%;
+    margin-left: 30rpx;
+}
+
+.range_title .range_right {
+    width: 30%;
+
+}
+
+.range_list {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    border-radius: 50rpx;
+    height: 95rpx;
+    width: 90%;
+    align-items: center;
+    font-size: 35rpx;
+}
+
+.range_list .range_left {
+    width: 30%;
+    margin-left: 50rpx;
+}
+
+
+.range_list .range_left image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.range_list .range_middle {
+    width: 30%;
+    margin-left: 30rpx;
+}
+
+.range_list .range_right {
+    width: 20%;
+    margin-left: 30rpx;
+}
+
+/* 班级圈 */
+
+.chat_box {
+    margin: 0 auto;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* 顶部 */
+.chat_box .top_info {
+    display: flex;
+    align-items: center;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+
+}
+
+.top_info .avatar image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+
+.top_info .userinfo {
+    display: block;
+    margin-left: 25rpx;
+    margin-right: 55rpx;
+}
+
+.top_info .userinfo .username {
+    font-size: 35rpx;
+    color: #333;
+}
+
+.top_info .userinfo .userdesc {
+    margin-top: 5rpx;
+    font-size: 26rpx;
+    color: #939393;
+}
+
+.top_info .label {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    top: -20rpx;
+}
+
+.top_info .label .label_content {
+
+    background-color: #E9F2FE;
+    padding: 8rpx;
+    border-radius: 45rpx;
+}
+
+.top_info .label text {
+    font-size: 25rpx;
+    text-align: center;
+    margin: 10rpx;
+}
+
+/* 中部 */
+.middle_info {
+    margin: 0 auto;
+    margin-left: 90rpx;
+    margin-bottom: 20rpx;
+ 
+    margin-right: 20rpx;
+
+}
+
+.middle_info .middle_content {
+    padding: 10rpx;
+    padding-left: 15rpx;
+    border-radius: 20rpx;
+}
+
+.middle_info .middle_content text {
+
+    white-space: normal;
+    font-size: 30rpx;
+
+}
+
+.middle_info .middle_image {
+    display: flex;
+    margin-top: 20rpx;
+
+}
+
+.middle_info .middle_image image {
+    width: 33%;
+    height: 180rpx;
+    margin-right: 10rpx;
+    border-radius: 16rpx;
+}
+
+.bottom_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22rpx;
+    padding-bottom: 16rpx;
+  
+    font-size: 35rpx;
+}
+
+.bottom_info .time {
+    color: gray;
+}
+
+.bottom_info .click_info {
+    color: gray;
+    margin-right: 20rpx;
+    display: flex;
+
+}
+
+.bottom_info .click_info .good_click {
+
+    margin-left: 40rpx;
+
+}
+
+.click_info text {
+    margin-left: 15rpx;
+
+}
+
+/* 通知详情内容 */
+.notice_box {
+    margin: 0 auto;
+    margin-left: 20rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+
+}
+.notice_box .notice_title{
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+.submit_box {
+    padding: 10rpx;
+    position: fixed;
+    right: 15rpx;
+    bottom: 100rpx;
+    background-color: rgb(167, 220, 255);
+    border-radius: 16rpx;
+
+}
+
+.submit_box .upload image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.submit_box .upload view {
+    font-size: 30rpx;
+    text-align: center;
+}

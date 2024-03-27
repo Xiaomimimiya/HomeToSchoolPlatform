@@ -1,0 +1,15 @@
+{
+    "usingComponents": {
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index",
+        "van-collapse": "/components/vantui/collapse/index",
+        "van-collapse-item": "/components/vantui/collapse-item/index",
+        "van-popup":"/components/vantui/popup/index",
+        "van-cell":"/components/vantui/cell/index",
+        "van-field": "/components/vantui/field/index",
+        "wxParse":"/components/wxParse/wxParse",
+        "van-notice-bar": "/components/vantui/notice-bar/index"
+      
+    },
+    "navigationBarTitleText": "食宿动态"
+}

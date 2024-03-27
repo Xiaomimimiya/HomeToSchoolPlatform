@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "van-collapse": "/components/vantui/collapse/index",
+        "van-collapse-item": "/components/vantui/collapse-item/index"
+    },
+    "navigationBarTitleText": "使用指南"
+}

@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index",
+        "van-popup":"/components/vantui/popup/index",
+        "van-collapse": "/components/vantui/collapse/index",
+        "van-collapse-item": "/components/vantui/collapse-item/index",
+        "van-icon": "/components/vantui/icon/index",
+        "van-notice-bar": "/components/vantui/notice-bar/index",
+        "van-image": "/components/vantui/image/index",
+        "wxParse":"/components/wxParse/wxParse"
+    },
+    "navigationBarTitleText": "班级空间"
+}

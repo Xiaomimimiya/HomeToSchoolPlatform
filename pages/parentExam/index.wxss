@@ -1,0 +1,65 @@
+page {
+    background-color: #FFFFFF;
+}
+.van-popup{
+    border-radius: 22rpx;
+}
+.question-container {
+    margin-top: 10rpx;
+}
+
+.question-container .question {
+    width: 95%;
+    margin: 0 auto;
+    font-size: 35rpx;
+    padding: 10rpx;
+    margin-top: 20rpx;
+
+}
+
+.question-container .options {
+    font-size: 30rpx;
+  
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 30rpx;
+    margin-left: 20rpx;
+}
+
+.options .option {
+    display: flex;
+    align-items: center; /* 将项目垂直居中 */
+    margin-top: 30rpx;
+    margin-right: 10rpx;
+    height: 100rpx;
+    background-color: #e9e7e7;
+    border-radius: 22rpx;
+    padding: 5rpx;
+  
+}
+
+.option text {
+
+    margin-left: 20rpx;
+
+}
+
+.buttom_box {
+    margin-top: 30rpx;
+    display: flex;
+}
+.selected{
+    background-color: red !important;
+}
+.title{
+    font-size: 50rpx;
+    text-align: center;
+}
+.analyze{
+    margin: 0 auto;
+    width: 90%;
+}
+.analyze text{
+    font-size: 40rpx;
+    margin-top: 20rpx;
+}

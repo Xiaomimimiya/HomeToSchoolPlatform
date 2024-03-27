@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "van-icon": "/components/vantui/icon/index",
+        "van-notice-bar": "/components/vantui/notice-bar/index",
+        "van-image": "/components/vantui/image/index",
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index"
+    },
+    "navigationBarTitleText": "交流论坛"
+}

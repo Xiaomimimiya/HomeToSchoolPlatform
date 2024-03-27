@@ -1,0 +1,117 @@
+<van-notice-bar background="#ECF9FF" color='#1989FA' scrollable left-icon="volume-o" text="2023年秋季校内课后服务报名已经开启" />
+
+
+<view class="top_icon_box">
+    <scroll-view scroll-x="true" style="white-space: nowrap;">
+        <view class="hot_icon comm" bindtap="showPopup" data-id="popup3">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/after_class/cover/shetuan.png" mode="" />
+            <text>社团课</text>
+        </view>
+        <view class="hot_icon comm" bindtap="showPopup" data-id="popup4">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/after_class/cover/yiti.png" mode="" />
+            <text>艺体课</text>
+        </view>
+        <view class="hot_icon comm" bindtap="showPopup" data-id="popup5">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/after_class/cover/keji.png" mode="" />
+            <text>科技课</text>
+        </view>
+        <view class="hot_icon comm" bindtap="showPopup" data-id="popup6">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/after_class/cover/meiyu.png" mode="" />
+            <text>美育课</text>
+        </view>
+    </scroll-view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-titles text-red"></text>热门课程
+    </view>
+    <view class="moredetail" bindtap="goPage" data-item="chatHot">
+        <text>更多</text>
+        <image class="arrow_image" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/comm_icon/arrow-right.png" mode="" />
+    </view>
+</view>
+<view class="top_icon_box">
+    <block wx:for="{{afterCourseData}}" wx:key="index">
+        <view class="hot_icon comm" bindtap="goDetail" data-id="{{item._id}}">
+            <image src="{{item.cover}}" mode="" />
+            <text>{{item.coursename}}</text>
+            <text style="color: #999; font-size:25rpx;">{{item.applynumber}}人参加</text>
+            <view style="color: #999; font-size:25rpx;" class="vi">{{item.age}}</view>
+        </view>
+    </block>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-titles text-blue"></text>推荐课程
+    </view>
+    <view class="moredetail" bindtap="goPage" data-item="chatHot">
+        <text>更多</text>
+        <image class="arrow_image" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/comm_icon/arrow-right.png" mode="" />
+    </view>
+</view>
+<view class="top_icon_box">
+    <block wx:for="{{afterReccomData}}" wx:key="index">
+        <view class="hot_icon comm">
+            <image src="{{item.cover}}" mode="" />
+            <text>{{item.coursename}}</text>
+            <text style="color: #999; font-size:25rpx;">{{item.applynumber}}人参加</text>
+        </view>
+    </block>
+</view>
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <view class="sign_top_title">
+        <text>{{userInfo.username}}同学已报名课程</text>
+    </view>
+    <view class="my_sign_box">
+        <block wx:for="{{applyData}}" wx:key="index">
+            <view class="sign_item">
+                <view class="left_content">
+                    <view class="sign_name">
+                        <text>课程名称：{{item.applycourse}}</text>
+                    </view>
+                    <view class="sign_name">
+                        <text>时间安排：{{item.time}}</text>
+                    </view>
+                </view>
+                <view class="right_content">
+                    <button size="mini"  class="sm round bg-blue">查看详情</button>
+                    <button size="mini" bindtap="deleteApply" data-item="{{item}}" class="sm round bg-red">取消报名</button>
+                </view>
+            </view>
+        </block>
+    </view>
+</van-popup>
+<van-popup show="{{popup2.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup2">
+    <view class="sign_top_title">
+        <text>xxx同学已参加课程</text>
+    </view>
+    <view class="my_sign_box">
+        <block wx:for="{{4}}" wx:key="index">
+            <view class="sign_item">
+                <view class="left_content">
+                    <view class="sign_name">
+                        <text>课程名称：1111</text>
+                    </view>
+                    <view class="sign_name">
+                        <text>时间安排：1111</text>
+                    </view>
+                    <view class="sign_name">
+                        <text>授课教师：1111</text>
+                    </view>
+                </view>
+                <view class="right_content">
+                    <button class="sm round bg-blue">查看详情</button>
+                </view>
+            </view>
+        </block>
+    </view>
+</van-popup>
+
+
+
+<view class="submit_box"  bindtap="showPopup" data-id="popup1">
+    <view class="upload " >
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/aply.png" mode="" />
+        <view>已报名</view>
+    </view>
+</view>

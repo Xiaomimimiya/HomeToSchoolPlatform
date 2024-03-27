@@ -1,0 +1,30 @@
+.containers {
+    margin: 0 auto;
+    width: 98%;
+    font-family: Arial, sans-serif;
+}
+
+.log_box {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-left: 25rpx;
+    padding-top: 20rpx;
+    padding-bottom: 10rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    border-radius: 16rpx;
+}
+
+.log_box .btn {
+  
+    position: relative;
+    text-align: right;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+}
+
+.log_box .btn button {
+
+    height: 60rpx !important;
+    width: 25%;
+}

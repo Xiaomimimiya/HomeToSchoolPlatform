@@ -1,0 +1,86 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/scoreAnalysis/index",
+        "pages/scoreAnalysisDetail/index",
+        "pages/growthFile/index",
+        "pages/growthFileSend/index",
+        "pages/AccommodationStatus/index",
+        "pages/classRoom/index",
+        "pages/classRoomAblum/index",
+        "pages/sendAblum/index",
+        "pages/sendMoney/index",
+        "pages/sendClassForum/index",
+        "pages/parentSchool/index",
+        "pages/parentExam/index",
+        "pages/educationResources/index",
+        "pages/educationBook/index",
+        "pages/afterClass/index",
+        "pages/afterClassdetail/index",
+        "pages/afterClassList/index",
+        "pages/educationQuestion/index",
+        "pages/noticeNews/index",
+        "pages/moralEducation/index",
+        "pages/voluntaryDetail/index",
+        "pages/capmusStyle/index",
+        "pages/campusActivity/index",
+        "pages/suggestions/index",
+        "pages/suggestionsSend/index",
+        "pages/newDetail/index",
+        "pages/forumPage/index",
+        "pages/forumSend/index",
+        "pages/forumDetail/index",
+        "pages/forumType/index",
+        "pages/messagePage/index",
+        "pages/messageDetail/index",
+        "pages/notice/index",
+        "pages/userHome/index",
+        "pages/userInfo/index",
+        "pages/userHomeInfo/index",
+        "pages/sendLog/index",
+        "pages/collectLog/index",
+        "pages/feedback/index",
+        "pages/freeGood/index",
+        "pages/useGuidance/index",
+        "pages/login/index",
+        "pages/platDesc/index",
+        "pages/exam/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#1296db",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "assets/images/tabbar_icon/no_select_home.png",
+                "selectedIconPath": "assets/images/tabbar_icon/select_home.png"
+            },
+            {
+                "pagePath": "pages/forumPage/index",
+                "text": "论坛",
+                "iconPath": "assets/images/tabbar_icon/no_select_chats.png",
+                "selectedIconPath": "assets/images/tabbar_icon/select_chats.png"
+            },
+            {
+                "pagePath": "pages/messagePage/index",
+                "text": "消息",
+                "iconPath": "assets/images/tabbar_icon/no_select_class.png",
+                "selectedIconPath": "assets/images/tabbar_icon/select_class.png"
+            },
+            {
+                "pagePath": "pages/userHome/index",
+                "text": "我的",
+                "iconPath": "assets/images/tabbar_icon/no_select_users.png",
+                "selectedIconPath": "assets/images/tabbar_icon/select_users.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

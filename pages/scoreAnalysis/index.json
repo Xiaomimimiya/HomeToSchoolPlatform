@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index"
+    },
+    "navigationBarTitleText": "学情分析"
+}

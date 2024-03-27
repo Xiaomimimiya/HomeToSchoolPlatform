@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "van-collapse": "/components/vantui/collapse/index",
+        "van-collapse-item": "/components/vantui/collapse-item/index",
+        "van-rate": "/components/vantui/rate/index",
+        "van-popup":"/components/vantui/popup/index",
+        "wxParse":"/components/wxParse/wxParse"
+    },
+    "navigationBarTitleText": "家长学校"
+}

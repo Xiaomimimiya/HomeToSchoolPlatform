@@ -1,0 +1,17 @@
+<view class="logo margin-top">
+    <image src="{{userDetail.useravatar}}" class="animation-scale-up" style="animation-delay: 0.4s;"></image>
+    <text class="userinfo-nickname">{{userDetail.username}}</text>
+</view>
+
+<view class="infobox">
+    <van-cell-group>
+        <van-field size="large" label="性别" value="{{ userDetail.sex }}" readonly input-align="middle" reading />
+        <van-field size="large" label="班级" value="{{ userDetail.classname }}" readonly input-align="middle" reading />
+        <van-field size="large" label="学号" value="{{ userDetail.usernumber }}" readonly input-align="middle" reading />
+        <van-field size="large" label="入学时间" value="{{userDetail.in_school }}" readonly input-align="middle" reading />
+        <van-field size="large" label="账号类型" value="{{ userDetail.usertype }}" readonly input-align="middle" reading />
+    </van-cell-group>
+    <view class="send_chat">
+        <button class='cu-btn bg-blue' bindtap="startChat" data-item="{{userDetail}}">立即联系</button>
+    </view>
+</view>

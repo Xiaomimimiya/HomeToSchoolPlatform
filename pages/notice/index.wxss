@@ -1,0 +1,72 @@
+.content_list {
+    background-color: #fff;
+    padding: 10rpx;
+
+}
+
+.content_list .content_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content_list .content_title .left_title {
+    display: flex;
+    align-items: center;
+    font-weight: 650;
+    font-family: serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 35rpx;
+}
+
+.content_list .content_title .left_title .icon_box_title {
+
+    border-top-left-radius: 22rpx;
+    border-top-right-radius: 22rpx;
+    border-bottom-right-radius: 22rpx;
+}
+
+.icon_box_title text {
+    font-size: 28rpx;
+    padding: 10rpx;
+    color: #fff;
+}
+
+.left_title_desc {
+    margin-left: 10rpx;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content_list .content_title .right_button image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+
+.content_list .middle_desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6F6F6F;
+    margin-top: 10rpx;
+}
+
+.middle_desc .left_send_name {
+    font-size:25rpx;
+    margin-left: 15rpx;
+}
+
+.middle_desc .right_send_time {
+    font-size:25rpx;
+    margin-right: 20rpx;
+}
+
+.bottom_desc {
+
+    padding-left: 15rpx;
+}

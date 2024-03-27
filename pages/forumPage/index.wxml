@@ -1,0 +1,161 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="banner cu-bar search bg-red shadow shadow-lg bg-white">
+    <view class="search-form round">
+        <view class="cuIcon-search">
+        </view>
+        <input type="text" class=" search_input" placeholder="请输入关键词" value="{{searchKey}}" bindinput="getSearchKey" confirm-type="search" bindconfirm="goSearch">
+        </input>
+        <view style="font-size: 40rpx;" bindtap="CancleSearch">
+            <text class="cuIcon-close"></text>
+        </view>
+    </view>
+    <view class="action">
+        <button class="cu-btn bg-gradual-blue shadow-blur round " size="mini" bindtap="goSearch">
+            <text class="search_text">搜索</text>
+        </button>
+    </view>
+</view>
+<view class="top_icon_box">
+    <view class="hot_icon comm" bindtap="goPage" data-item="forumType">
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/3907369.png" mode="" />
+        <text>热门讨论</text>
+    </view>
+    <view class="hot_icon comm" bindtap="goPage" data-icon="育人经验" data-item="forumType">
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/share.png" mode="" />
+        <text>育人经验</text>
+    </view>
+    <view class="hot_icon comm" bindtap="goPage" data-icon="咨询求助" data-item="forumType">
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/865428.png" mode="" />
+        <text>咨询求助</text>
+    </view>
+    <view class="hot_icon comm" bindtap="goPage" data-icon="家校点滴" data-item="forumType">
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/3408183.png" mode="" />
+        <text>家校点滴</text>
+    </view>
+</view>
+<block wx:if="{{SearchList.length>0}}">
+    <scroll-view>
+        <block wx:for="{{SearchList}}" wx:key="index">
+            <view class="chat_box">
+                <view class="top_info">
+                    <view class="avatar">
+                        <image src="{{item.avatar}}" mode="" />
+                    </view>
+                    <view class="userinfo" bindtap="showUseInfo" data-item="{{item.user_id}}">
+                        <view class="username">
+                            <text>{{item.username}}</text>
+                        </view>
+                        <view class="userdesc">
+                            <text>{{item.classname}}</text>
+                        </view>
+                    </view>
+                    <view class="label">
+                        <view class="label_content">
+                            <text style="color: #2B80F3;">{{item.icon}}</text>
+                        </view>
+                    </view>
+                    <block wx:if="{{item.user_id == userInfo._id}}">
+                        <view class="delete" bindtap="deleteList" data-id="{{item._id}}">
+                            <text class="lg text-lg text-red cuIcon-delete"></text>
+                        </view>
+                    </block>
+                </view>
+                <view class="middle_info">
+                    <view class="middle_content" bindtap="goDetail" data-id="{{item._id}}">
+                        <text>{{item.content}}</text>
+                    </view>
+                    <view wx:if="{{item.image.length>0}}">
+                        <view class="middle_image">
+                            <block wx:for="{{item.image}}" wx:key="index">
+                                <image bindtap="previewImage" src="{{item}}" mode="" data-item="{{item}}" />
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <view class="bottom_info">
+                    <view class="time">
+                        <text>{{filters.formatDate(item._createTime)}}</text>
+                    </view>
+                    <view class="click_info">
+                        <view class="comment">
+                            <van-icon name="comment-o" />
+                            <text>{{item.comment.length}}</text>
+                        </view>
+                        <view class="good_click">
+                            <van-icon name="good-job-o" />
+                            <text>{{item.good}}</text>
+                        </view>
+
+                    </view>
+                </view>
+            </view>
+
+        </block>
+    </scroll-view>
+</block>
+<block wx:else>
+    <scroll-view>
+        <block wx:for="{{chatList}}" wx:key="index">
+            <view class="chat_box">
+                <view class="top_info">
+                    <view class="avatar">
+                        <image src="{{item.avatar}}" mode="" />
+                    </view>
+                    <view class="userinfo" bindtap="showUseInfo" data-item="{{item.user_id}}">
+                        <view class="username">
+                            <text>{{item.username}}</text>
+                        </view>
+                        <view class="userdesc">
+                            <text>{{item.classname}}</text>
+                        </view>
+                    </view>
+                    <view class="label">
+                        <view class="label_content" bindtap="goPage" data-icon="{{item.icon}}" data-item="forumType">
+                            <text style="color: #2B80F3;">{{item.icon}}</text>
+                        </view>
+                    </view>
+                    <block wx:if="{{item.user_id == userInfo._id}}">
+                        <view class="delete" bindtap="deleteList" data-id="{{item._id}}">
+                            <text class="lg text-lg text-red cuIcon-delete"></text>
+                        </view>
+                    </block>
+                </view>
+                <view class="middle_info">
+                    <view class="middle_content" bindtap="goDetail" data-id="{{item._id}}">
+                        <text>{{item.content}}</text>
+                    </view>
+                    <view wx:if="{{item.image.length>0}}">
+                        <view class="middle_image">
+                            <block wx:for="{{item.image}}" wx:key="index">
+                                <image bindtap="previewImage" src="{{item}}" mode="" data-item="{{item}}" />
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <view class="bottom_info">
+                    <view class="time">
+                        <text>{{filters.formatDate(item._createTime)}}</text>
+                    </view>
+                    <view class="click_info">
+                        <view class="comment">
+                            <van-icon name="comment-o" />
+                            <text>{{item.comment.length}}</text>
+                        </view>
+                        <view class="good_click">
+                            <van-icon name="good-job-o" />
+                            <text>{{item.good}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </block>
+    </scroll-view>
+</block>
+<!-- 点击去发布 -->
+<view class="submit_box" bindtap="goSend">
+    <view class="upload">
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/message.png" mode="" />
+        <view>发帖</view>
+    </view>
+</view>

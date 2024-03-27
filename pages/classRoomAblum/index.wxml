@@ -1,0 +1,11 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="time">
+    {{filters.formatDateNoSecond(detail_data._createTime)}}
+</view>
+<view class="image_box">
+    <block wx:for="{{detail_data.imagelist}}" wx:key="index">
+        <view class="image_item">
+            <image src="{{item}}" data-list="{{detail_data.imagelist}}"  data-src="{{item}}"  bindtap="imgDetail" mode="" />
+        </view>
+    </block>
+</view>

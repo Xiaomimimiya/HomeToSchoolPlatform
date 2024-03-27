@@ -1,0 +1,6 @@
+/* pages/suggestionsSend/index.wxss */page {
+    background-color: #fff;
+}
+textarea{
+    font-size: 40rpx !important;
+}

@@ -1,0 +1,108 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="top_image">
+    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/1.png" mode="" />
+</view>
+<view class="review_box">
+    <view class="top_box">
+        <view class="left_box">
+            <view class="title">
+                <view class="titile_name">建议反馈</view>
+                <view class='cu-tag round' bindtap="goSend">
+                    <text>立即建议</text>
+                </view>
+            </view>
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/message.png" mode="" />
+        </view>
+        <view class="right_box">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/email.png" mode="" />
+            <view class="title">
+                <view class="titile_name">校长信箱</view>
+                <view class='cu-tag round' bindtap="goSend">
+                    <text>立即写信</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="notice_bar">
+    <van-notice-bar left-icon="volume-o" color="#468AF5" background="#D5E5FF" text="珍惜每一个鼓励和建议，我们一直努力！"></van-notice-bar>
+</view>
+<view class="desc_content_box">
+    <view class="title" style="padding: 10rpx 10rpx 0 0; margin-left: 10rpx; font-size: 35rpx;font-weight: 700;">信息广场</view>
+    <view class="desc_content">
+        <van-tabs active="{{ active }}" line-width="100rpx" color="blue">
+            <van-tab title="建议内容">
+                <block wx:for="{{suggData}}" wx:key="indx">
+                    <view class="content_list">
+                        <view class="content_title">
+                            <view class="left_title">
+                                <text>{{item.title}}</text>
+                            </view>
+                            <view class="right_button" bindtap="showPopup" data-id="popup1" data-title="{{item.title}}" data-reply="{{item.reply}}" data-content="{{item.content}}">
+                                <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/arrow.png" mode="" />
+                            </view>
+                        </view>
+                        <view class="middle_desc">
+                            <view class="left_send_name">
+                                <text>发布者：{{item.senduser}}</text>
+                            </view>
+                            <view class="right_send_time">
+                                <text>{{filters.formatXie(item._createTime)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="line" style="border-bottom: 1px solid rgb(236, 236, 236);"></view>
+                </block>
+            </van-tab>
+            <van-tab title="来信公开">
+                <block wx:for="{{teacherData}}" wx:key="indx">
+                    <view class="content_list">
+                        <view class="content_title">
+                            <view class="left_title">
+                                <text>{{item.title}}</text>
+                            </view>
+                            <view class="right_button" bindtap="showPopup" data-id="popup1" data-title="{{item.title}}" data-reply="{{item.reply}}" data-content="{{item.content}}">
+                                <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/arrow.png" mode="" />
+                            </view>
+                        </view>
+                        <view class="middle_desc">
+                            <view class="left_send_name">
+                                <text>处理部门：{{item.senduser}}</text>
+                            </view>
+                            <view class="right_send_time">
+                                <text>{{filters.formatXie(item._createTime)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="line" style="border-bottom: 1px solid rgb(236, 236, 236);"></view>
+                </block>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view>
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <view class="notice_box">
+        <view class="notice_title">
+            <text>{{title}}</text>
+        </view>
+        <view class="line" style="border-bottom: 1px solid rgb(175, 175, 175);"></view>
+        <view class="detail" style="margin-top: 10rpx;" selectable="true" user-select>
+            <wxParse user-select nodes="{{content}}"></wxParse>
+        </view>
+        <view class="line" style="border-bottom: 1px solid rgb(175, 175, 175); margin-top: 10rpx;"></view>
+        <view class="notice_title" style="margin-top: 10rpx;">
+            <text>回复内容</text>
+        </view>
+        <view class="line" style="border-bottom: 1px solid rgb(175, 175, 175);"></view>
+        <block wx:if="{{reply.length==0}}">
+            <empty top="30" width="220" height="220" content="暂未回复"></empty>
+        </block>
+        <block wx:else>
+            <view class="detail" style="margin-top: 10rpx;" selectable="true" user-select>
+                <wxParse user-select nodes="{{reply}}"></wxParse>
+            </view>
+        </block>
+
+       
+    </view>
+</van-popup>

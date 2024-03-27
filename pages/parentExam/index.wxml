@@ -1,0 +1,27 @@
+<view class="question-container">
+    <view class="question">
+        <text>{{currentQuestion.title}}</text>
+    </view>
+    <view class="options">
+        <block wx:for="{{currentQuestion.content}}" wx:key="index">
+            <view class="option" bindtap="selectOption" data-index="{{index}}">
+                <text bindtap="showPopup" data-analyze="{{currentQuestion.analyze}}" data-answer="{{currentQuestion.answer}}" data-id="popup1">{{letters[index]}}. {{item}}
+                </text>
+            </view>
+        </block>
+    </view>
+</view>
+<view class="buttom_box">
+    <button class=" sm round bg-green" bindtap="prevQuestion">上一题</button>
+    <button class=" sm round bg-green" bindtap="nextQuestion">下一题</button>
+</view>
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <view class="title">
+        <text>正确答案：{{answer}}</text>
+    </view>
+    <view class="line" style="border-bottom: 1px solid rgb(236, 236, 236); margin-top: 10rpx;margin-bottom: 15rpx;"></view>
+    <view class="analyze">
+        <text>{{ analyze}} </text>
+    </view>
+
+</van-popup>

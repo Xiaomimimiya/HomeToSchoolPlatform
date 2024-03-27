@@ -1,0 +1,66 @@
+.top_image{
+    margin-top: 5rpx;
+    width: 100%;
+    margin: 0 auto;
+}
+.top_image image{
+    width: 100%;
+    height: 400rpx;
+   
+}
+.hot_chat_box{
+    width: 96%;
+  
+    background-color: #fff;
+    margin:  0 auto;
+    position: relative;
+    bottom: 80rpx;
+    border-radius: 20rpx;
+    padding-bottom: 50rpx;
+}
+.hot_chat_item {
+    position: relative;
+    top: 30rpx;
+    width: 94%;
+    margin: 0 auto;
+    border-radius: 20rpx;
+  
+    margin-bottom: 10rpx;
+    display: flex;
+    align-items: center;
+
+    background-color: #d5ffff;
+}
+
+.hot_chat_item .left_image{
+    padding: 10rpx;
+}
+.hot_chat_item .left_image image{
+    width: 60rpx;
+    height: 60rpx;
+}
+.hot_chat_item .middle_content{
+    margin-left: 20rpx;
+    font-size: 40rpx;
+ 
+}
+.hot_chat_item .middle_content text{
+     /* 显示三行文字 */
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp:1;
+     overflow: hidden;
+     /* 使用省略号代替多余的文字 */
+     text-overflow: ellipsis;
+}
+.title{
+    position: absolute;
+    top: 220rpx;
+    left: 20rpx;
+}
+.title text{
+    color: #fff;
+    font-size: 80rpx;
+    font-weight: 700;
+    font-family:'Times New Roman', Times, serif;
+}

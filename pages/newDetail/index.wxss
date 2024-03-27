@@ -1,0 +1,28 @@
+/* pages/home/news_detail/news_detail.wxss */
+
+.notice_title .title{
+    font-weight: 650;
+    color: #333;
+}
+.submit_box {
+
+    padding: 10rpx;
+    position: fixed;
+    right: 15rpx;
+    bottom: 100rpx;
+    background-color: rgb(0, 215, 253);
+
+    border-radius: 16rpx;
+
+}
+
+.submit_box .upload image {
+    width: 100rpx;
+    height: 100rpx;
+
+}
+
+.submit_box .upload view {
+    font-size: 30rpx;
+    text-align: center;
+}

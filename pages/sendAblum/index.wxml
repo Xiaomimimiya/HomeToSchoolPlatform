@@ -1,0 +1,32 @@
+<form catchsubmit="publish">
+    <view class="cu-form-group margin-top">
+        <view class="title">主题</view>
+        <input placeholder="两字短标题" name="type" ></input>
+    </view>
+    <view class="cu-bar bg-white margin-top">
+        <view class="action">
+            <text class="text-black">图片上传(最多6张)</text>
+        </view>
+        <view class="action">
+            {{imgList.length}}/6
+        </view>
+    </view>
+    <view class="cu-form-group">
+        <view class="grid col-4 grid-square flex-sub">
+            <view class="bg-img" wx:for="{{imgList}}" wx:key="index">
+                <image class="img" src='{{item}}' mode='aspectFill'></image>
+                <view class="cu-tag bg-red" bindtap="DeleteImg" data-index="{{index}}">
+                    <text class="cuIcon-close"></text>
+                </view>
+            </view>
+            <!-- 选择图片按钮 -->
+            <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<6}}">
+                <text class="cuIcon-cameraadd"></text>
+            </view>
+        </view>
+    </view>
+    <view class="padding flex  flex-wrap ">
+        <button class=" bg-blue shadow-blur flex-sub   round" formType="submit">确认上传</button>
+    </view>
+
+</form>

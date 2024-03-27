@@ -1,0 +1,88 @@
+page {
+    background-color: #f3f3f3;
+}
+
+.action button {
+    width: 130rpx !important;
+    height: 60rpx !important;
+}
+.searchInput{
+    margin-left: 30rpx;
+}
+.van-button {
+    margin-right: 10rpx !important;
+    width: 20% !important;
+    background-color: #f8f9fb !important;
+}
+/* 内容框 */
+.chat_box {
+    margin-top: 5rpx;
+    background-color: #ffffff;
+}
+
+.chat_item {
+    display: flex;
+    margin-bottom: 5rpx;
+    align-items: center;
+    height: 150rpx;
+}
+
+.chat_item .left_avatar {
+    width: 20%;
+    padding: 10rpx;
+}
+
+.chat_item .left_avatar image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 120rpx;
+}
+
+.chat_item .right_content {
+    width:80%;
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+}
+
+.chat_item .right_content .top_content {
+    display: flex;
+    align-items: center;
+}
+.top_content .username{
+    font-size: 40rpx;
+    font-weight: 550;
+}
+.top_content .send_time{
+    position: absolute;
+    right: 30rpx;
+    font-size: 30rpx;
+}
+.top_content .send_time text{
+    color: #666;
+    font-size: 30rpx;
+}
+.chat_item .right_content .bottom_chat {
+    width: 70%;
+    margin-top: 15rpx;
+}
+.chat_item .right_content .bottom_chat text{
+    
+    margin-bottom: 10rpx;
+    /* 显示两行 */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #777;
+    font-weight: 500;
+    font-size: 35rpx;
+}
+.with_line {
+   
+    display: block;
+    height: 1rpx;
+    width: 98%;
+    margin: 0 auto;
+    background-color: #ececec;
+}

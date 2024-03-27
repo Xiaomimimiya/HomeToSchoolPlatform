@@ -1,0 +1,87 @@
+<view class="class_desc">
+    <view class="left_image">
+        <image src="{{detail_data.cover}}" mode="" />
+    </view>
+    <view class="right_content">
+        <view class="name">
+            <text>{{detail_data.coursename}}</text>
+        </view>
+        <view class="time">
+            <text>{{detail_data.time}}</text>
+        </view>
+        <view class="time">
+            <text>适合年级：{{detail_data.age}}</text>
+        </view>
+        <view class="people">
+            <text>{{detail_data.applynumber}}人已报名</text>
+        </view>
+        <view class="sub_botton" data-info="{{detail_data}}" bindtap="goApply">
+            <button size="mini">立即报名</button>
+        </view>
+    </view>
+</view>
+
+<view class="desc_content_box">
+    <view class="desc_content">
+        <van-tabs active="{{ active }}" line-width="100rpx" color="blue">
+            <van-tab title="课程介绍">
+                <view class="detail" selectable="true" user-select>
+                    <wxParse style="padding: 10rpx;" user-select nodes="{{content}}"></wxParse>
+                </view>
+            </van-tab>
+            <van-tab title="学习清单">
+                <block wx:for="{{5}}" wx:key="index">
+                    <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+                        <van-collapse-item title="第{{index+1}}课时" name="{{index}}">
+                            代码是写出来给人看的，附带能在机器上运行
+                        </van-collapse-item>
+                    </van-collapse>
+                </block>
+            </van-tab>
+            <van-tab title="学习反馈">
+                <scroll-view>
+                    <view class="message_wall">
+                        <block wx:for="{{5}}" wx:key="index">
+                            <view class="message_box">
+                                <view class="top_info">
+                                    <view class="avatar">
+                                        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/mockData/avatar/avatar1.png" mode="" />
+                                    </view>
+                                    <view class="username">
+                                        <text>小米同学</text>
+                                    </view>
+                                    <view class="rate_content">
+                                        <van-rate readonly size="{{ 15 }}" color="#EE0A24" icon="like" void-icon="like-o" value="{{ 6 }}" />
+                                    </view>
+                                    <view class="send_time">
+                                        <text>2024/1/12 10:20</text>
+                                    </view>
+                                </view>
+                                <view class="middle_content">
+                                    <text>留言内容</text>
+                                </view>
+                                <view class="line" style="border-bottom: 1px solid rgb(236, 236, 236);"></view>
+                            </view>
+                        </block>
+                        <view class="comment_send_box">
+                            <form catchsubmit="publish">
+                                <view class="cu-form-group">
+                                    <textarea name="content" style="color: rgb(112, 112, 112); font-size: 40rpx" bindinput="handleInput" value="{{inputValue}}" maxlength="-1" placeholder="发布你对课程的评价吧~~~"></textarea>
+                                </view>
+                                <view class="rate_choose">
+                                    <text>选择评分：</text>
+                                    <van-rate value="{{ value }}" icon="like" void-icon="like-o" bind:change="onChange" />
+                                </view>
+                                <view class="padding flex  flex-wrap ">
+                                    <button class=" bg-cyan shadow-blur flex-sub round" formType="reset">内容清空</button>
+                                    <button class=" bg-blue shadow-blur flex-sub round" formType="submit">发布评价</button>
+                                </view>
+                            </form>
+                        </view>
+                    </view>
+                </scroll-view>
+            </van-tab>
+
+        </van-tabs>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="class_box">
+    <block wx:for="{{5}}" wx:key="index">
+        <view class="class_item" bindtap="goDetail">
+            <view class="top_content">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/class.png" mode="" />
+            </view>
+            <view class="middle_content">
+                <view class="class_name">
+                    <text>橙黄科学实验室{{index+1}}</text>
+                </view>
+                <view class="class_desc">
+                    <text>初二、初三年级</text>
+                </view>
+                <view class="choose">
+                    <text>10人参加</text>
+                    <text style="margin-right: 30rpx;">10课时</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

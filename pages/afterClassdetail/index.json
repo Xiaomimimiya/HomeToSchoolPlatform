@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index",
+        "van-collapse": "/components/vantui/collapse/index",
+        "van-collapse-item": "/components/vantui/collapse-item/index",
+        "wxParse":"/components/wxParse/wxParse"
+
+    },
+    "navigationBarTitleText": "课程详情",
+    "navigationBarBackgroundColor": "#E0EEFF"
+}

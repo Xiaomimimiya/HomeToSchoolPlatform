@@ -1,0 +1,108 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="swiper_box">
+    <swiper autoplay="true" indicator-active-color="#00A1D6" indicator-color="#fff" indicator-dots interval="3000">
+        <block wx:for="{{swiper_data}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item}}" mode="" />
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<scroll-view>
+    <view class="margin-top-xs margin-bottom-xs">
+        <block wx:for="{{notice_data}}" wx:key="index">
+            <van-notice-bar background="#fff" left-icon="{{item.image}}" color='#333' scrollable text="{{item.content}}" />
+        </block>
+    </view>
+    <view class="grids_box">
+        <view class="grids">
+            <view class="grid_item" bindtap="goPage" data-item="classRoom">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/classroom.png" mode="" />
+                <text>班级空间</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="scoreAnalysis">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/scoreAnlysis.png" mode="" />
+                <text>学情分析</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="growthFile">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/studentArich.png" mode="" />
+                <text>成长档案</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="AccommodationStatus">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/dormitory.png" mode="" />
+                <text>食宿动态</text>
+            </view>
+
+        </view>
+    </view>
+    <view class="grids_box">
+        <view class="grids">
+            <view class="grid_item" bindtap="goPage" data-item="parentSchool">
+                <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/grid_school/study_help/challenge.png" mode="" />
+                <text>家长学校</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="afterClass">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/afterclass.png" mode="" />
+                <text>课后服务</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="educationQuestion">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/question.png" mode="" />
+                <text>育人咨询</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="suggestions">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/advice.png" mode="" />
+                <text>建言献策</text>
+            </view>
+        </view>
+    </view>
+    <view class="grids_box">
+        <view class="grids">
+            <view class="grid_item" bindtap="goPage" data-item="noticeNews">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/news.png" mode="" />
+                <text>校园新闻</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="capmusStyle">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/landscape.png" mode="" />
+                <text>校园风采</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="campusActivity">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/935229.png" mode="" />
+                <text>校园活动</text>
+            </view>
+            <view class="grid_item" bindtap="goPage" data-item="moralEducation">
+                <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/home_icon/moral.png" mode="" />
+                <text>校园德育</text>
+            </view>
+        </view>
+    </view>
+    <view class="school_news_bar">
+        <view class="cu-bar bg-white margin-bottom-xs ">
+            <view wx:for="{{navItems}}" wx:key="title" class="action border-title margin-left" wx:class="{ 'active': item.active }" bindtap="onNavItemClick" data-index="{{index}}">
+                <text class="text-xl text-bold" style="color: #1f2df1;">{{item.title}}</text>
+                <text class="bg-gradual-blue" style="width:120rpx"></text>
+            </view>
+        </view>
+
+        <block wx:for="{{newsData}}" wx:key="index">
+            <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+                <view class="left">
+                    <view class="left_top_desc">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="left_bottom_desc">
+                        <view class="department">
+                            <text>{{item.senduser}}</text>
+                        </view>
+                        <view class="send_time">
+                            <text>{{filters.formatXie(item._createTime)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="right">
+                    <image src="{{item.cover}}" mode="" />
+                </view>
+            </view>
+        </block>
+
+    </view>
+</scroll-view>

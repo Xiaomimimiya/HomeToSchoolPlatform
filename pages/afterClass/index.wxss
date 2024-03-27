@@ -1,0 +1,139 @@
+.van-popup {
+    border-radius: 22rpx;
+}
+
+
+
+
+/* 下面内容 */
+
+.cu-bar {
+    padding: 0rpx !important;
+}
+
+.moredetail {
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    color: gray;
+}
+
+.arrow_image {
+    width: 45rpx;
+    height: 45rpx;
+}
+/* 社团、艺体课 */
+.top_icon_box {
+    padding-bottom: 5rpx;
+    margin-bottom: 5rpx;
+}
+
+.top_icon_box .comm {
+    padding: 5rpx;
+    display: inline-block;
+    margin-left: 10rpx;
+    margin-right: 5rpx;
+    margin-top: 8rpx;
+
+    width: 23%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 16rpx;
+
+}
+
+.top_icon_box .hot_icon image {
+    display: block;
+    width: 100%;
+    height: 120rpx;
+    margin: 0 auto;
+    border-top-left-radius: 22rpx;
+    border-top-right-radius: 22rpx;
+}
+
+.top_icon_box .hot_icon text {
+    display: block;
+    padding-top: 15rpx;
+    padding-bottom: 10rpx;
+    text-align: center;
+    font-size: 25rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 报名标题 */
+.sign_top_title {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10rpx;
+}
+
+.sign_top_title text {
+    font-size: 40rpx;
+    font-weight: 700;
+
+}
+
+/* 报名列表 */
+.my_sign_box {
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 10rpx;
+}
+
+.my_sign_box .sign_item {
+    width: 100%;
+    margin-bottom: 10rpx;
+    background-color: #BFCBF7;
+    border-radius: 22rpx;
+
+    display: flex;
+    align-items: center;
+   
+}
+
+.my_sign_box .sign_item .left_content {
+    padding-top: 10rpx;
+    padding-left: 10rpx;
+    font-size: 30rpx;
+    margin-left: 20rpx;
+}
+
+.sign_item .left_content .sign_name {
+    padding: 10rpx;
+}
+
+.my_sign_box .sign_item .right_content {
+    position: absolute;
+    right: 0rpx;
+}
+
+.sign_item .right_content button {
+    width: 60%;
+    margin-top: 10rpx;
+    font-size: 20rpx;
+}
+
+/* 右边按钮 */
+.submit_box {
+    padding: 10rpx;
+    position: fixed;
+    right: 15rpx;
+    bottom:400rpx;
+    background-color: rgb(43, 206, 255);
+    border-radius: 16rpx;
+
+}
+
+.submit_box .upload image {
+    width: 80rpx;
+    height: 80rpx;
+
+}
+
+.submit_box .upload view {
+    font-size:25rpx;
+    text-align: center;
+}

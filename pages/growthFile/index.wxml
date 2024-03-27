@@ -1,0 +1,149 @@
+<view class="top_image">
+    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/comm-image/student.jpg" mode="" />
+</view>
+
+
+<block wx:if="{{!userInfo}}">
+    <empty top="30" width="260" height="260" content="您还未登录"></empty>
+</block>
+<block wx:else>
+    <view class="user_info">
+        <view class="avatar">
+            <image src="{{userInfo.useravatar}}" mode="" />
+        </view>
+        <view class="info">
+            <view class="name">
+                <text>{{userInfo.username}}成长档案</text>
+                <view class='cu-tag round' style="font-size: 30rpx;">{{userInfo.classname}}</view>
+            </view>
+            <view class="classname">
+                <text class="account">{{userInfo.usernumber}}</text>
+            </view>
+        </view>
+    </view>
+    <scroll-view>
+        <view class="box_content">
+            <van-tabs type="card" color="#7684FF">
+                <van-tab title="学校表现">
+                    <view class="content_box">
+                        <view class="cu-timeline">
+                            <block wx:if="{{class_data.length==0}}">
+                                <empty top="30" width="220" height="220" content="暂时没有课堂表现"></empty>
+                            </block>
+                            <block wx:else>
+                                <block wx:for="{{class_data}}" wx:key="index">
+                                    <view class="cu-item">
+                                        <view class="content">
+                                            <view class="cu-capsule round">
+                                                <view class="cu-tag bg-cyan">{{item.title}}</view>
+                                                <view class="cu-tag line-cyan">{{item.time}}</view>
+                                            </view>
+                                            <view class="margin-top ">
+                                                <view>{{item.content}}</view>
+                                                <block wx:if="{{item.image.length>0}}">
+                                                    <image bindtap="previewImage" src="{{item.image}}" data-item="{{item.image}}" />
+                                                </block>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </block>
+
+                            </block>
+                        </view>
+                    </view>
+                </van-tab>
+                <van-tab title="家庭表现">
+                    <view class="content_box">
+                        <view class="cu-timeline">
+                            <block wx:if="{{home_data.length==0}}">
+                                <empty top="30" width="220" height="220" content="暂时没有课堂表现"></empty>
+                            </block>
+                            <block wx:else>
+                                <block wx:for="{{home_data}}" wx:key="index">
+                                    <view class="cu-item">
+                                        <view class="content">
+                                            <view class="cu-capsule round">
+                                                <view class="cu-tag bg-cyan">{{item.title}}</view>
+                                                <view class="cu-tag line-cyan">{{item.time}}</view>
+                                            </view>
+                                            <view class="margin-top ">
+                                                <view>{{item.content}}</view>
+                                                <block wx:if="{{item.image.length>0}}">
+                                                    <image bindtap="previewImage" src="{{item.image}}" data-item="{{item.image}}" />
+                                                </block>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </block>
+
+                            </block>
+                        </view>
+                    </view>
+                </van-tab>
+                <van-tab title="奖励表彰">
+                    <view class="content_box">
+                        <view class="cu-timeline">
+                            <block wx:if="{{reward_data.length==0}}">
+                                <empty top="30" width="220" height="220" content="暂时没有奖励表彰"></empty>
+                            </block>
+                            <block wx:else>
+                                <block wx:for="{{reward_data}}" wx:key="index">
+                                    <view class="cu-item">
+                                        <view class="content">
+                                            <view class="cu-capsule round">
+                                                <view class="cu-tag bg-cyan">{{item.title}}</view>
+                                                <view class="cu-tag line-cyan">{{item.time}}</view>
+                                            </view>
+                                            <view class="margin-top ">
+                                                <view>{{item.content}}</view>
+                                                <block wx:if="{{item.image.length>0}}">
+                                                    <image src="{{item.image}}" mode="" />
+                                                </block>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </block>
+
+                            </block>
+                        </view>
+                    </view>
+                </van-tab>
+                <van-tab title="教师评价">
+                    <view class="content_box">
+                        <view class="cu-timeline">
+                            <block wx:if="{{eval_data.length==0}}">
+                                <empty top="30" width="220" height="220" content="暂时没有奖励表彰"></empty>
+                            </block>
+                            <block wx:else>
+                                <block wx:for="{{eval_data}}" wx:key="index">
+                                    <view class="cu-item">
+                                        <view class="content">
+                                            <view class="cu-capsule round">
+                                                <view class="cu-tag bg-cyan">{{item.title}}</view>
+                                                <view class="cu-tag line-cyan">{{item.time}}</view>
+                                            </view>
+                                            <view class="margin-top ">
+                                                <view>{{item.content}}</view>
+                                                <block wx:if="{{item.image.length>0}}">
+                                                    <image src="{{item.image}}" mode="" />
+                                                </block>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </block>
+
+                            </block>
+                        </view>
+                    </view>
+                </van-tab>
+            </van-tabs>
+        </view>
+    </scroll-view>
+
+</block>
+<view class="submit_box" bindtap="goSend">
+    <view class="upload">
+        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/message.png" mode="" />
+        <view>发布</view>
+    </view>
+</view>

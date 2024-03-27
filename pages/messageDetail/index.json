@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-image":"/components/vantui/image/index"
+    },
+    "navigationBarTitleText": "消息详情"
+}

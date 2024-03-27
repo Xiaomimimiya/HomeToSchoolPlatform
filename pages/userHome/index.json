@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-icon": "/components/vantui/icon/index"
+    },
+    "navigationBarTitleText": "我的主页"
+  }

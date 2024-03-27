@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "van-popup":"/components/vantui/popup/index",
+        "van-collapse": "/components/vantui/collapse/index",
+        "van-collapse-item": "/components/vantui/collapse-item/index",
+        "van-notice-bar": "/components/vantui/notice-bar/index",
+        "wxParse":"/components/wxParse/wxParse",
+        "van-datetime-picker": "/components/vantui/datetime-picker/index",
+        "empty":"/components/empty/empty"
+    },
+    "navigationBarTitleText": "育人咨询"
+   
+}

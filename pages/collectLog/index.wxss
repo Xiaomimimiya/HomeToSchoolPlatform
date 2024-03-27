@@ -1,0 +1,60 @@
+.collect_box{
+    width: 96%;
+    margin: 0 auto;
+    background-color: #fff;
+   
+    border-radius: 20rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.top_content{
+    display: flex;
+    align-items: center;
+}
+.top_content .left_image{
+    padding-left: 15rpx;
+    padding-top: 10rpx;
+}
+.top_content .left_image image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.top_content .middle_title{
+    margin-left: 20rpx;
+    font-weight: 700;
+    font-size: 30rpx;
+}
+.top_content .middle_title text{
+     /* 显示三行文字 */
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp:1;
+     overflow: hidden;
+ 
+     /* 使用省略号代替多余的文字 */
+     text-overflow: ellipsis;
+}
+.border-line {
+    width: 100%;
+    height: 1rpx;
+    display: inline-block;
+    margin: 10rpx 0rpx;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+}
+.middle_content{
+    margin-left: 15rpx;
+    color: #666;
+}
+.bottom_content {
+    padding: 10rpx;
+    margin-top: 10rpx;
+}
+.bottom_content button{
+    height: 50rpx !important;
+    width: 200rpx !important;
+    margin-left: 20rpx !important;
+}
+.bottom_content button text{
+    padding: 10rpx;
+}

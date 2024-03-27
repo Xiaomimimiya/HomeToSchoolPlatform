@@ -1,0 +1,4 @@
+<view class="container" style="margin-top:{{top}}rpx">
+    <image class="empty-img" style="width: {{width}}rpx; height: {{height}}rpx;"  mode="widthFix" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/comm-image/empty.png"></image>
+    <view class="title">{{content}}</view>
+</view>

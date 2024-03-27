@@ -1,0 +1,70 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+
+<view class="chat_item" bindtap="goPage" style="background-color: #FFFFFF; margin-top: 5rpx;">
+    <view class="left_avatar">
+        <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/avatar/notice.png" mode="" />
+    </view>
+    <view class="right_content"  >
+        <view class="top_content" >
+            <view class="username">
+                <text>系统通知</text>
+            </view>
+            <view class="send_time">
+                <text>{{filters.formatDate(newsData._createTime)}}</text>
+            </view>
+        </view>
+        <view class="bottom_chat">
+            <text>{{item.message[item.message.length - 1].content}}</text>
+        </view>
+    </view>
+</view>
+<view class="chat_box">
+    <block wx:for="{{send_chatdata}}" wx:key="index">
+        <view class="chat_item">
+            <view class="left_avatar">
+                <image src="{{item.recever_user_avatar}}" mode="" />
+            </view>
+            <view class="right_content" bindtap="goDetail" data-item="{{item._id}}">
+                <view class="top_content">
+                    <view class="username">
+                        <text>{{item.recever_user_name}}</text>
+                    </view>
+                    <view class="send_time">
+                        <text>{{filters.formatDate(item.message[item.message.length-1].time)}}</text>
+                    </view>
+                </view>
+                <view class="bottom_chat">
+                    <text>{{item.message[item.message.length-1].content}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="with_line">
+        </view>
+        <view class="{{ index < send_chatdata.length - 1 ? 'with_line' : '' }}">
+        </view>
+    </block>
+    <block wx:for="{{recever_chatdata}}" wx:key="index">
+        <view class="chat_item">
+            <view class="left_avatar">
+                <image src="{{item.send_user_avatar}}" mode="" />
+            </view>
+            <view class="right_content" bindtap="goDetail" data-item="{{item._id}}">
+                <view class="top_content">
+                    <view class="username">
+                        <text>{{item.send_user_name}}</text>
+                    </view>
+                    <view class="send_time">
+                        <text>{{filters.formatDate(item.message[item.message.length-1].time)}}</text>
+                    </view>
+                </view>
+                <view class="bottom_chat">
+                    <text>{{item.message[item.message.length-1].content}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="with_line">
+        </view>
+        <view class="{{ index < receive_chatdata.length - 1 ? 'with_line' : '' }}">
+        </view>
+    </block>
+</view>

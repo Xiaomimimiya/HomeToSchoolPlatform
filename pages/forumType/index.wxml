@@ -1,0 +1,23 @@
+<view class="top_image">
+    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/1.png" mode="" />
+</view>
+<view class="title">
+    <text>{{title}}</text>
+</view>
+<block wx:if="{{hot_data.length>0}}">
+    <view class="hot_chat_box">
+    <block wx:for="{{hot_data}}" wx:key="index">
+        <view class="hot_chat_item " style="background-color: {{color[index]}};"  data-id="{{item._id}}" bindtap="goDetail">
+            <view class="left_image">
+                <image src="{{image[index]}}" mode="" />
+            </view>
+            <view class="middle_content">
+                <text>{{item.content}}</text>
+            </view>
+        </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+    <empty top="30" width="220" height="220" content="暂无数据"></empty>
+</block>

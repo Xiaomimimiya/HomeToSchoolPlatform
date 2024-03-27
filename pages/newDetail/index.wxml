@@ -1,0 +1,25 @@
+<scroll-view>
+    <wxs src="../../utils/util.wxs" module="filters" />
+    <view class="margin-sm padding-sm bg-white radius shadow">
+        <view class="solids-bottom margin-bottom-sm notice_title">
+            <view class=" title  text-xl margin-bottom-sm">{{detail_data.title}}</view>
+            <view class="padding-bottom text-black">{{detail_data.senduser}} 发布于 {{filters.formatXie(detail_data._createTime)}}</view>
+        </view>
+        <!-- 引入新组件 来进行富文本解析 -->
+        <view class="detail" selectable="true" user-select>
+            <wxParse user-select nodes="{{content}}"></wxParse>
+        </view>
+    </view>
+    <view class="submit_box" bindtap="goCollcet">
+    <view class="upload">
+        <block wx:if="{{isFavorited}}">
+            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/write_icon/favor.png" mode="" />
+            <view>已收藏</view>
+        </block>
+        <block wx:else>
+            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/write_icon/no_favor.png" mode="" />
+            <view>未收藏</view>
+        </block>
+    </view>
+</view>
+</scroll-view>

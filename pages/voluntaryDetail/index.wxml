@@ -1,0 +1,79 @@
+<scroll-view>
+    <wxs src="../../utils/util.wxs" module="filters" />
+    <view class="root">
+        <!-- 顶部轮播图 -->
+        <block>
+            <swiper class="swiper-multi square-dot" circular="{{true}}" autoplay="{{true}}" interval="3000" duration="500" indicator-dots="{{true}}" indicator-color="white" indicator-active-color="#0082c8">
+                <swiper-item>
+                    <image src="{{detail_data.coverImage}}" mode="" />
+                </swiper-item>
+            </swiper>
+        </block>
+
+        <view class="content_box">
+            <view class="good_root">
+                <view class="good_title">{{detail_data.title}}</view>
+                <text class="border-line"></text>
+                <view class="location">
+                    <text class="lg text-lg cuIcon-location"></text>
+                    <text class="locations">{{detail_data.location}}</text>
+                </view>
+                <text class="border-line"></text>
+            </view>
+            <view class="good_time">
+                <text class="lg text-xl cuIcon-time"></text>
+                <text> 时间要求：{{detail_data.time}}</text>
+
+            </view>
+            <text class="border-line"></text>
+            <view class="good_time">
+                <text class="lg text-lg cuIcon-people"></text>
+                <text> 招募人数：{{detail_data.people}}</text>
+            </view>
+            <text class="border-line"></text>
+            <view class="good_time">
+                <text class="lg text-lg cuIcon-form"></text>
+                <text> 已报名：{{detail_data.number}}</text>
+            </view>
+            <text class="border-line"></text>
+            <view class="flex">
+                <view class="good_phone flex-twice  radius">
+                    <text class="lg text-lg cuIcon-phone"></text>
+                    <text selectable="true"> 联系方式：{{detail_data.chat}}</text>
+                </view>
+                <view class='cu-tag select round line-cyan'>长按复制</view>
+            </view>
+            <text class="border-line"></text>
+            <view class="good_content">
+                {{detail_data.desc}}
+            </view>
+        </view>
+    </view>
+    <view class="apply_box">
+        <view class="good_root">
+            <view class="good_name">已报名单</view>
+        </view>
+        <block wx:if="{{applylist.length==0}}">
+            <empty top="30" width="220" height="220" content="赶紧去报名吧~~~"></empty>
+        </block>
+        <block wx:else>
+            <block wx:for="{{applylist}}" wx:key="index">
+                <view class="apply_list">
+                    <view class='cu-tag select round bg-orange'>{{index+1}}、{{item.classname}}——{{item.username}}</view>
+                </view>
+            </block>
+        </block>
+
+    </view>
+    <view class="bottom">
+        <view class="cu-bar input">
+            <button open-type="share" class="cu-btn round bg-cyan shadow" style="margin-left: 5rpx;">活动分享</button>
+            <block wx:if="{{isApply}}">
+                <button class="cu-btn round bg-red shadow" style="margin-left: 5rpx;">你已报名</button>
+            </block>
+            <block wx:else="">
+                <button class="cu-btn round bg-blue shadow" style="margin-left: 5rpx;" bindtap="goOrder">立即报名</button>
+            </block>
+        </view>
+    </view>
+</scroll-view>

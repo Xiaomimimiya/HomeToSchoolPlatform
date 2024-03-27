@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "empty":"/components/empty/empty",
+        "wxParse":"/components/wxParse/wxParse"
+    },
+    "navigationBarTitleText": "课程详情",
+    "navigationBarBackgroundColor": "#262834"  
+}

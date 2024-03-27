@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-notice-bar": "/components/vantui/notice-bar/index",
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index"
+    },
+    "navigationBarTitleText": "德育之窗"
+}

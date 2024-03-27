@@ -1,0 +1,36 @@
+<view class="top_image">
+    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/score/score.png" mode="" />
+</view>
+<view class="content_box">
+
+    <block wx:if="{{!userInfo}}">
+        <view class="empty_boxs">
+            <empty top="30" width="260" height="260" content="您还未登录"></empty>
+        </view>
+    </block>
+    <block wx:else>
+        <block wx:for="{{examData}}" wx:key="index">
+            <view class="score_box">
+                <view class="top_info">
+                    <view class="cu-capsule round">
+                        <view class='cu-tag bg-blue '>
+                            排名:
+                        </view>
+                        <view class="cu-tag line-blue">
+                            第{{item.ranking}}名
+                        </view>
+                    </view>
+                    <view class="detail" bindtap="goDetail" data-item="{{item}}" data-title="{{item.examname}}">
+                        <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/score/detail.png" mode="" />
+                    </view>
+                </view>
+                <view class="title">
+                    <text>{{item.examname}}</text>
+                </view>
+                <view class="bottom">
+                    <text>考试时间：{{item.examtime}}</text>
+                </view>
+            </view>
+        </block>
+    </block>
+</view>

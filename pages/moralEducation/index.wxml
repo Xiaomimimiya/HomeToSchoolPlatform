@@ -1,0 +1,76 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<van-tabs active="{{ active }}" line-width="100rpx" color="blue">
+    <van-tab title="德育活动">
+        <block wx:for="{{moraldata}}" wx:key="indx">
+            <view class="news_box" bindtap="goDetail" data-id="{{item._id}}">
+                <view class="left">
+                    <view class="left_top_desc">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="left_bottom_desc">
+                        <view class="department">
+                            <text>{{item.senduser}}</text>
+                        </view>
+                        <view class="send_time">
+                            <text>{{filters.formatXie(item._createTime)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="right">
+                    <image src="{{item.cover}}" mode="" />
+                </view>
+            </view>
+        </block>
+    </van-tab>
+    <van-tab title="爱国教育">
+        <block wx:for="{{patriotic}}" wx:key="indx">
+            <view class="news_box" bindtap="goDetail" data-id="{{item._id}}">
+                <view class="left">
+                    <view class="left_top_desc">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="left_bottom_desc">
+                        <view class="department">
+                            <text>{{item.senduser}}</text>
+                        </view>
+                        <view class="send_time">
+                            <text>{{filters.formatXie(item._createTime)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="right">
+                    <image src="{{item.cover}}" mode="" />
+                </view>
+            </view>
+        </block>
+    </van-tab>
+    <van-tab title="志愿服务">
+        <view class="box">
+            <block wx:for="{{allData}}" wx:key="index">
+                <view class="box_item">
+                    <view class="left">
+                        <image src="{{item.coverImage}}" mode="" />
+                    </view>
+                    <view class="right">
+                        <view class="title">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <view class="number">
+                            <text>时间：{{item.time}}</text>
+                        </view>
+                        <view class="number">
+                            <text>地点：{{item.location}}</text>
+                        </view>
+                        <view class="number">
+                            <text>人数：{{item.people}}</text>
+                        </view>
+                        <view class="goDetail" bindtap="goVoluntaryDetail" data-id="{{item._id}}">
+                            <button class="round bg-olive" size="mini">查看详情</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </van-tab>
+   
+</van-tabs>

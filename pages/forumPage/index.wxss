@@ -1,0 +1,214 @@
+page {
+    background-color: #EFEFEF;
+}
+.action button {
+    width: 130rpx !important;
+    height: 60rpx !important;
+}
+.searchInput{
+    margin-left: 30rpx;
+}
+.van-button {
+    margin-right: 10rpx !important;
+    width: 20% !important;
+    background-color: #f8f9fb !important;
+}
+
+.top_icon_box {
+    padding-top: 5rpx;
+    padding-bottom: 5rpx;
+    width: 100%;
+}
+
+.top_icon_box .comm {
+    padding: 10rpx;
+    display: inline-block;
+    margin-left: 10rpx;
+    margin-right: 5rpx;
+    margin-top: 8rpx;
+    width: 23%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 16rpx;
+
+}
+
+.top_icon_box .hot_icon image {
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+}
+
+.top_icon_box .hot_icon text {
+    display: block;
+    padding-top: 15rpx;
+    padding-bottom: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.click_icon {
+    display: flex;
+    width: 30%;
+    margin-left: 20rpx;
+}
+
+.chat_box {
+    margin: 0 auto;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* 顶部 */
+.chat_box .top_info {
+    display: flex;
+    align-items: center;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+
+}
+.top_info .delete{
+    position:absolute;
+    right: 30rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+.top_info .avatar image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.top_info .userinfo {
+    display: block;
+    margin-left: 25rpx;
+    margin-right: 55rpx;
+}
+
+.top_info .userinfo .username {
+    font-size: 35rpx;
+    color: #333;
+}
+
+.top_info .userinfo .userdesc {
+    margin-top: 5rpx;
+    font-size: 26rpx;
+    color: #939393;
+}
+
+.top_info .label {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    top: -20rpx;
+}
+
+.top_info .label .label_content {
+
+    background-color: #E9F2FE;
+    padding: 8rpx;
+    border-radius: 45rpx;
+}
+
+.top_info .label text {
+    font-size: 25rpx;
+    text-align: center;
+    margin: 10rpx;
+}
+
+/* 中部 */
+.middle_info {
+    margin: 0 auto;
+    margin-left: 90rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+
+}
+
+.middle_info .middle_content {
+    padding: 10rpx;
+    padding-left: 15rpx;
+    border-radius: 20rpx;
+}
+
+.middle_info .middle_content text {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    white-space: normal;
+    font-size: 40rpx;
+
+}
+
+.middle_info .middle_image {
+    display: flex;
+    margin-top: 20rpx;
+
+}
+
+.middle_info .middle_image image {
+    width: 33%;
+    height: 180rpx;
+    margin-right: 10rpx;
+    border-radius: 16rpx;
+}
+
+.bottom_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22rpx;
+    padding-bottom: 16rpx;
+    padding-top: 10rpx;
+    font-size: 35rpx;
+}
+
+.bottom_info .time {
+    color: gray;
+}
+
+.bottom_info .click_info {
+    color: gray;
+    margin-right: 20rpx;
+    display: flex;
+
+}
+
+.bottom_info .click_info .good_click {
+
+    margin-left: 40rpx;
+
+}
+
+.click_info text {
+    margin-left: 15rpx;
+
+}
+
+
+/* 提交按钮 */
+
+.submit_box {
+    padding: 10rpx;
+    position: fixed;
+    right: 15rpx;
+    bottom: 100rpx;
+    background-color: #c0f2ff;
+    border-radius: 16rpx;
+
+}
+
+.submit_box .upload image {
+    width: 100rpx;
+    height: 100rpx;
+
+}
+
+.submit_box .upload view {
+    font-size: 30rpx;
+    text-align: center;
+}

@@ -1,0 +1,174 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="swiper_box">
+    <swiper autoplay="true" indicator-active-color="#00A1D6" indicator-color="#fff" indicator-dots interval="3000">
+        <block wx:for="{{swiper_data}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item}}" mode="" />
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="exam_box">
+    <view class="right_bcg"></view>
+    <view class="left_content">
+        <view class="top_text">
+            <text>家长必测</text>
+        </view>
+        <view class="middle_text">
+            <text>完成必修测评，可获积分奖励！</text>
+        </view>
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-titles text-blue"></text>家长成长服务
+    </view>
+</view>
+<view class="cu-list grid col-2 border">
+    <view class="cu-item" bindtap="showPopup" data-id="popup1">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/parent_school/hot_course.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>育人课程</text>
+        </view>
+    </view>
+    <view class="cu-item" bindtap="showPopup" data-id="popup4">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/parent_school/recomm_book.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>育人好书</text>
+        </view>
+    </view>
+    <view class="cu-item" bindtap="showPopup" data-id="popup5">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/parent_school/law.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>育人法规</text>
+        </view>
+    </view>
+    <view class="cu-item" bindtap="showPopup" data-id="popup6">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/parent_school/exam.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>育人答题</text>
+        </view>
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom margin-top-xs">
+    <view class="action">
+        <text class="cuIcon-titles text-red"></text>最新育人资讯
+    </view>
+</view>
+<view class="new_boxs">
+    <block wx:for="{{newsDatas}}" wx:key="index">
+        <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+            <view class="left">
+                <view class="left_top_desc">
+                    <text>{{item.title}}</text>
+                </view>
+                <view class="left_bottom_desc">
+                    <view class="department">
+                        <text>{{item.senduser}}</text>
+                    </view>
+                    <view class="send_time">
+                        <text>{{filters.formatXie(item._createTime)}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="right">
+                <image src="{{item.cover}}" mode="" />
+            </view>
+        </view>
+    </block>
+</view>
+
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 85%" bind:close="onClose" data-id="popup1">
+
+    <view class="class_item">
+        <block wx:for="{{educationDatas}}" wx:key="index">
+            <view class=" hot_icon comm" bindtap="goDetail" data-id="{{item._id}}">
+                <image src="{{item.cover}}" mode="" />
+                <view class="class_title">{{item.title}}</view>
+                <view class="bottom_content">
+                    <view class="left">
+                        <text class="lg text-lg cuIcon-home"></text>
+                        <text class="send_name">{{item.department}}</text>
+                    </view>
+                </view>
+                <view class="borders"></view>
+                <view class="desc_class">
+                    <view class="left">
+                        <text class="lg text-lg cuIcon-appreciate"></text>
+                        <text class="appreciate">{{item.good}}人点赞</text>
+                    </view>
+                    <view class="right">
+                        <text class="lg text-lg cuIcon-edit"></text>
+                        <text class="appreciate">{{item.watch}}人观看</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</van-popup>
+<van-popup show="{{popup4.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 85%" bind:close="onClose" data-id="popup4">
+    <view class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-cyan">好书分享</button>
+    </view>
+    <block wx:for="{{writeDatas}}" wx:key="index">
+        <view class="share_read_box" bindtap="goBookDetail" data-id="{{item._id}}">
+            <view class="left_image">
+                <image src="{{item.image}}" mode="" />
+            </view>
+            <view class="right_content">
+                <view class="top_content">
+                    <view class="title">
+                        <view class="title_desc">
+                            <text>{{item.title}}</text>
+                        </view>
+
+                    </view>
+                    <view class="send_user">
+                        <image src="{{item.send_avatar}}" mode="" />
+                        <view class=" cu-tag round line-cyan ">{{item.send_name}}</view>
+                    </view>
+                </view>
+                <view class="middle_content">
+                    <view class="desc">
+                        <wxParse user-select nodes="{{item.desc}}"></wxParse>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+
+</van-popup>
+<van-popup show="{{popup5.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 85%" bind:close="onClose" data-id="popup5">
+    <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+        <block wx:for="{{lawData}}" wx:key="index">
+            <van-collapse-item title="{{item.title}}">
+                <view class="item_box">
+                    <text>{{item.content}}</text>
+                </view>
+            </van-collapse-item>
+        </block>
+    </van-collapse>
+</van-popup>
+<van-popup show="{{popup6.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 85%" bind:close="onClose" data-id="popup6">
+    <block wx:for="{{examList}}" wx:key="index">
+        <view class="exam_box_list">
+            <view class="cu-bar bg-white solid-bottom">
+                <view class="action">
+                    <text class="cuIcon-titles text-blue"></text>{{item}}
+                </view>
+                <view class="right_desc">
+                    <button size="mini" style="margin-right: 30rpx;" bindtap="goExamDetail" data-type="{{item}}" class=" sm round bg-green">立即测试</button>
+                </view>
+            </view>
+        </view>
+    </block>
+</van-popup>

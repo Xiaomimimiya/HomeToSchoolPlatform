@@ -1,0 +1,213 @@
+/* pages/educationBook/index.wxss */page {
+    background-color: #fff;
+}
+
+.header {
+
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 10rpx;
+    background-color: #FFFFFF;
+    border-radius: 16rpx;
+    padding-bottom: 20rpx;
+}
+
+.top_content {
+    display: flex;
+    align-items: center;
+}
+
+.top_content .title {
+    padding: 20rpx;
+    font-size: 50rpx;
+    font-weight: 700;
+    margin-bottom: 15rpx;
+}
+
+.header .middle_content {
+    display: flex;
+    align-items: center;
+}
+
+.header .middle_content .left_content image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+
+.header .middle_content .send_info .top_userinfo {
+    margin-left: 30rpx;
+    font-size: 40rpx;
+}
+
+.header .middle_content .send_info .bottom_time {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    margin-top: 5prx;
+    color: #666;
+}
+
+.wiriteDetail {
+    font-size: 35rpx;
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 10rpx;
+    background-color: #FFFFFF;
+    border-radius: 16rpx;
+ 
+}
+
+.wiriteDetail .detail {
+    padding: 20rpx;
+    background-color: rgb(245, 245, 245);
+    border-radius: 20rpx;
+}
+
+.wiriteDetail .detail text {
+    padding: 15rpx;
+    font-size: 40rpx;
+}
+
+.image_box {
+    text-align: center;
+}
+
+.image_box image {
+    width: 80%;
+    padding: 10rpx;
+}
+.comment_middle{
+    margin-top: 20rpx;
+}
+.comment_middle .middle_content {
+    padding-bottom: 100rpx;
+}
+
+.comment_middle .middle_content .title {
+    font-size: 40rpx;
+    margin-top: 25rpx;
+    margin-left: 30rpx;
+    color: #FCFEFE;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+}
+
+.comment_middle .click {
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+}
+
+.comment_middle .comment_send_box {
+
+    width: 92%;
+    margin: 0 auto;
+}
+
+.comment_send_box .cu-form-group {
+    height: 200rpx;
+    border-radius: 20rpx;
+    background-color: #d8eef8;
+}
+
+.comment_send_box button {
+    margin-right: 10rpx !important;
+}
+
+.submit_box {
+
+    padding: 10rpx;
+    position: fixed;
+    right: 15rpx;
+    bottom: 100rpx;
+    background-color: rgb(41, 216, 129);
+
+    border-radius: 16rpx;
+
+}
+
+.comment {
+    font-size: 35rpx;
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 10rpx;
+}
+
+.comment_list .top_content {
+    display: flex;
+    margin-left: 30rpx;
+}
+
+.top_content .avatar image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+/* 评论内容 */
+.comment_middle .comment_list {
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    padding-bottom: 15rpx;
+}
+
+.comment_middle .comment_list .userinfo {
+    display: flex;
+    align-items: center;
+    height: 80rpx;
+}
+
+.comment_middle .comment_list .userinfo .avatar image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.comment_middle .comment_list .userinfo .username {
+    margin-left: 30rpx;
+    font-size: 35rpx;
+    color: #32a7ff;
+    line-height: 80rpx;
+}
+
+.comment_middle .comment_list .userinfo .time {
+    margin-left: 30rpx;
+    font-size: 35rpx;
+    color: #999;
+    line-height: 80rpx;
+}
+
+.comment_middle .comment_list .comment_content {
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    margin-right: 30rpx;
+    padding-bottom: 10rpx;
+}
+
+.comment_list .comment_content text {
+    color: black;
+
+}
+
+.submit_box .upload image {
+    width: 100rpx;
+    height: 100rpx;
+
+}
+
+.submit_box .upload view {
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.border-line {
+    width: 100%;
+    height: 1rpx;
+    display: inline-block;
+    background-color: rgb(206, 206, 206);
+    text-align: center;
+    margin-top: 5rpx;
+}

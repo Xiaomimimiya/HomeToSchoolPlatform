@@ -1,0 +1,114 @@
+<view wx:if="{{isShowUserName}}" class="header" bindtap='change'>
+    <image class="userinfo-avatar" src="{{userInfo.useravatar}}"></image>
+    <view class="userinfo-nickname">
+        <view class="top_info">
+            <view class="name">{{userInfo.username}}</view>
+            <view class='cu-tag radius line-cyan usertype round'>
+                <text>{{userInfo.usertype}}</text>
+            </view>
+        </view>
+        <view class="desc">
+            <view class='cu-tag radius round line-blue'> {{userInfo.classname}}</view>
+        </view>
+    </view>
+    <image bindtap="goDetail" data-item="userHomeInfo" class="UserInfo" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/arrow.png" mode="" />
+
+</view>
+
+
+<view wx:else="{{!isShowUserName}}" class="btn-login">
+
+    <view class="btn-area  cu-list menu card-menu margin-top-xs margin-bottom-xs shadow-lg radius">
+        <view class="cu-item arrow margin-top-xs">
+            <navigator class="content" url="/pages/useGuidance/index" hover-class="none">
+                <van-icon class="icon_list" name="question-o" size="45rpx" />
+                <text class="text-grey text-sm list_comment">使用指南</text>
+            </navigator>
+        </view>
+        <view class="cu-item arrow">
+            <navigator class="content" url="/pages/feedback/index" hover-class="none">
+                <van-icon class="icon_list" name="chat-o" size="45rpx" />
+                <text class="text-sm list_comment">功能反馈</text>
+            </navigator>
+        </view>
+
+        <view class="cu-item arrow">
+            <navigator class="content" url="/pages/platDesc/index" hover-class="none">
+                <van-icon class="icon_list" name="question-o" size="45rpx" />
+                <text class="text-grey text-sm list_comment">关于我们</text>
+            </navigator>
+        </view>
+    </view>
+    <button type="primary" bindtap="goDetail" data-item="login">立即登陆</button>
+</view>
+<view wx:if="{{isShowUserName}}" class="btn-area  cu-list menu card-menu margin-top-xs margin-bottom-xs shadow-lg radius">
+    <view class="grids_box">
+        <view class="title">
+            <text>成长福利</text>
+        </view>
+        <view class="review_box">
+            <view class="top_box">
+                <view class="left_box">
+                    <view class="title">
+                        <view class="titile_name">每日签到</view>
+                        <view class='cu-tag round' bindtap="signToday">
+                            <text>赚取积分</text>
+                        </view>
+                    </view>
+                    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/education.png" mode="" />
+                </view>
+                <view class="right_box">
+                    <view class="title">
+                        <view class="titile_name">礼品兑换</view>
+                        <view class='cu-tag round' bindtap="goDetail" data-item="freeGood">
+                            <text>立即兑换</text>
+                        </view>
+                    </view>
+                    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/love.png" mode="" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cu-item arrow margin-top-xs">
+        <navigator class="content" hover-class="none" bindtap="goDetail" data-item="sendLog">
+            <van-icon class="icon_list" name="volume-o" size="45rpx" />
+            <text class="text-grey text-sm list_comment">我的发布</text>
+        </navigator>
+
+    </view>
+    <view class="cu-item arrow ">
+        <navigator class="content" hover-class="none" bindtap="goDetail" data-item="collectLog">
+            <van-icon class="icon_list" name="like-o" size="45rpx" />
+            <text class="text-grey text-sm list_comment">我的收藏</text>
+        </navigator>
+
+    </view>
+
+    <view class="cu-item arrow margin-top-xs">
+        <navigator class="content" url="/pages/useGuidance/index" hover-class="none">
+            <van-icon class="icon_list" name="question-o" size="45rpx" />
+            <text class="text-grey text-sm list_comment">使用指南</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow">
+        <navigator class="content" url="/pages/feedback/index" hover-class="none">
+            <van-icon class="icon_list" name="chat-o" size="45rpx" />
+            <text class="text-sm list_comment">功能反馈</text>
+        </navigator>
+    </view>
+
+    <view class="cu-item arrow">
+        <navigator class="content" url="/pages/platDesc/index" hover-class="none">
+            <van-icon class="icon_list" name="question-o" size="45rpx" />
+            <text class="text-grey text-sm list_comment">关于我们</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow">
+        <button class="cu-btn content" style="font-weight: normal;" hover-class="none">
+            <van-icon class="icon_list" name="exchange" size="45rpx" />
+            <text class="text-sm list_comment" bindtap="tuichu">退出登录</text>
+        </button>
+    </view>
+
+    
+</view>

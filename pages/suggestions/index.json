@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "van-notice-bar": "/components/vantui/notice-bar/index",
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index",
+        "van-rate":"/components/vantui/rate/index",
+        "van-popup":"/components/vantui/popup/index",
+        "wxParse":"/components/wxParse/wxParse",
+        "empty":"/components/empty/empty"
+        
+    },
+    "navigationBarTitleText": "建言献策",
+    "navigationBarBackgroundColor": "#96BEFE"
+}

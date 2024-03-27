@@ -1,0 +1,61 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="container">
+    <view class="nav">
+
+        <view class="nav-item {{activeIndex == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+            <view class="title_name">校园活动</view>
+        </view>
+        <view class="nav-item {{activeIndex ==1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+            <view class="title_name">社团活动</view>
+        </view>
+    </view>
+    <view class="content" wx:if="{{activeIndex == 0}}">
+        <scroll-view>
+            <block wx:for="{{schooldata}}" wx:key="index">
+                <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+                    <view class="left">
+                        <view class="left_top_desc">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <view class="left_bottom_desc">
+                            <view class="department">
+                                <text>{{item.senduser}}</text>
+                            </view>
+                            <view class="send_time">
+                                <text>{{filters.formatXie(item._createTime)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <image src="{{item.cover}}" mode="" />
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="content" wx:if="{{activeIndex == 1}}">
+        <scroll-view>
+            <block wx:for="{{ clubdata}}" wx:key="index">
+                <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+                    <view class="left">
+                        <view class="left_top_desc">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <view class="left_bottom_desc">
+                            <view class="department">
+                                <text>{{item.senduser}}</text>
+                            </view>
+                            <view class="send_time">
+                                <text>{{filters.formatXie(item._createTime)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <image src="{{item.cover}}" mode="" />
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+
+</view>

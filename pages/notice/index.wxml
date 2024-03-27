@@ -1,0 +1,25 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<block wx:for="{{newsData}}" wx:key="index">
+    <view class="content_list"style="margin-top:1rpx">
+        <view class="content_title">
+            <view class="left_title">
+                <view class="left_title_desc">
+                    <text>{{item.title}}</text>
+                </view>
+            </view>
+            <view class="right_button" bindtap="showPopup" data-id="popup5" data-title="{{noticeData[index].noticehead}}" data-content="{{noticeData[index].noticecontent}}">
+                <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/arrow.png" mode="" />
+            </view>
+        </view>
+        <view class="middle_desc">
+            <view class="left_send_name">
+                <text>发布者：{{item.senduser}}</text>
+            </view>
+            <view class="right_send_time">
+                <text>{{ filters.formatDate(item._createTime)}}</text>
+            </view>
+        </view>
+
+    </view>
+    <view class="line" style="border-bottom: 1px solid rgb(236, 236, 236);"></view>
+</block>

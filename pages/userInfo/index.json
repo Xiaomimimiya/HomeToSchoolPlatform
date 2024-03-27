@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "van-field": "/components/vantui/field/index"
+    },
+    "navigationBarTitleText": "用户资料"
+    
+}

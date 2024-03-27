@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "wxParse":"/components/wxParse/wxParse",
+        "empty":"/components/empty/empty"
+    },
+    "navigationBarTitleText": "内容详情"
+}

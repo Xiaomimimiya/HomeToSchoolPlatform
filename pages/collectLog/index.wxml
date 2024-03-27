@@ -1,0 +1,44 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<block wx:if="{{collectData.length==0}}">
+    <empty top="50" width="320" height="320" content="您还未有收藏记录"></empty>
+
+</block>
+
+<block wx:else>
+    <scroll-view>
+        <block wx:for="{{collectData}}" wx:key="index">
+        <view class="collect_box">
+            <view class="top_content">
+                <view class="left_image">
+                    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/write_icon/favor.png" mode="" />
+                </view>
+                <view class="middle_title">
+                    <text>{{item.title}}</text>
+                </view>
+            </view>
+            <text class="border-line"></text>
+            <view class="middle_content">
+                <view class="type">
+                    <text>类型：{{item.type}}</text>
+                </view>
+                <view class="time">
+                    <text>时间：{{filters.formatDate(item.time)}}</text>
+                </view>
+                <view class="send">
+                    <text>发送者：{{item.senduser}}</text>
+                </view>
+            </view>
+            <view class="bottom_content">
+
+                <button class="cu-btn round line-cyan" bindtap="cancleCollect" data-id="{{item._id}}">
+                    <text>取消收藏</text>
+                </button>
+                <button class="cu-btn round line-blue" bindtap="onBtnClick" data-id="{{item.TypeID}}">
+                    <text>查看详情</text>
+                </button>
+
+            </view>
+        </view>
+    </block>
+    </scroll-view>
+</block>

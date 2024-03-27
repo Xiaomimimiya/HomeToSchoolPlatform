@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "van-field": "/components/vantui/field/index",
+        "van-icon": "/components/vantui/icon/index",
+        "van-popup":"/components/vantui/popup/index",
+        "empty":"/components/empty/empty"
+    },
+    "navigationBarTitleText": "内容详情"
+   
+}

@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "van-popup":"/components/vantui/popup/index",
+        "van-image": "/components/vantui/image/index",
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index"
+    },
+    "navigationBarTitleText": "校园风采"
+}

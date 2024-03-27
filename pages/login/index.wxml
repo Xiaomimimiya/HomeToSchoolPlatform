@@ -1,0 +1,127 @@
+<view class="logo margin-top">
+    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/other_image/login_image.png" class="animation-scale-up" style="animation-delay: 0.4s;"></image>
+</view>
+
+<view class="login-box">
+    <view class="bd">
+        <form class="login-form">
+            <view class="input-group">
+                <text class="input-label">帐号</text>
+                <input type="number" cursor-spacing="30" id="userid" maxlength="-1" placeholder="请输入统一账号" bindinput="getUserName" />
+            </view>
+            <view class="input-group {{passwd_focus ? 'active' : ''}}">
+                <text class="input-label">密码</text>
+                <input password="true" cursor-spacing="30" id="passwd" placeholder="初始密码为123456" bindinput="getPassword" />
+            </view>
+            <view class="login-help" bindtap="showHelp">
+                <text>登录帮助</text>
+
+            </view>
+        </form>
+        <view class="confirm-btn" bindtap="login">
+            <text>确认登录</text>
+        </view>
+    </view>
+</view>
+<view class="privacy" bindtap="showPopup" data-id="popup1">
+    <view class="content">用户隐私协议>>></view>
+</view>
+<view class="Copyright text-bold text-gray  text-lg text-shadow margin-top-xs">Copyright © 2024 家校共育小助手</view>
+
+
+
+
+<view class="help" id="help" wx:if="{{help_status}}" bindtap="tapHelp">
+    <view class="box">
+        <view class="box-hd">
+            <text class="box-title">登录帮助</text>
+            <image class="box-close" src="/assets/images/icon/close.png" bindtap="hideHelp"></image>
+        </view>
+        <view class="box-bd">
+            <view class="help-q">1、帐号和密码是什么？</view>
+            <view class="help-a">
+                <text>帐号：您孩子的学号</text>
+                <text>密码：初始密码或者您已更改密码</text>
+            </view>
+            <view class="help-q">2、忘记密码？</view>
+            <view class="help-a">
+                <text>请联系管理员或班主任进行找回密码</text>
+            </view>
+        </view>
+    </view>
+</view>
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <scroll-view>
+        <view class="  shadow margin radius bg-white padding text-lg">
+            <view class="user">隐私政策</view>
+            <text>
+                欢迎使用我们的校园兼职平台。本隐私政策解释了我们如何收集、使用和保护您的个人信息。我们承诺保护您的隐私并遵守适用的数据保护法规。
+
+                1. 信息的收集和使用
+                我们会收集和使用以下信息：
+                - 您在注册账户时提供的个人信息，例如姓名、性别、年龄、联系方式等；
+                - 您在使用平台时提供的个人信息，例如发布任务或接受任务时提供的信息；
+                - 您在使用平台时提供的交易信息，例如支付信息、任务完成情况等；
+                - 您在使用平台时的操作信息和设备信息，例如IP地址、浏览器类型、操作系统版本、设备标识符等。
+
+                我们会使用这些信息来：
+                - 提供服务并管理您的账户；
+                - 处理您的交易；
+                - 改进我们的服务；
+                - 解决争议和处理问题；
+                - 防止欺诈和违法行为；
+                - 遵守法律法规和政府要求。
+
+                2. 信息的共享和披露
+                除非经过您的明确同意，我们不会向第三方出售、出租、分享或交换您的个人信息。我们会在以下情况下共享您的信息：
+                - 与我们合作的服务提供商，例如支付机构、客服代理商等，但这些合作方仅能使用您的信息来提供服务；
+                - 根据法律法规、政府要求或法院命令；
+                - 为保护我们、用户或公众的权益。
+
+                3. 信息的保护
+                我们会采取适当的技术和组织措施来保护您的个人信息，包括但不限于加密、访问控制、数据备份等。我们会与合作方签署保密协议，确保他们也会采取相应的保护措施。
+
+                4. Cookie和类似技术
+                我们会使用Cookie和类似技术来收集和存储您的信息。Cookie是一种将数据存储在您的设备上的小数据文件，用于记录您的偏好和行为。您可以通过浏览器设置拒绝Cookie。
+
+                5. 第三方链接
+                我们的平台可能包含第三方链接，这些链接可能会收集您的个人信息。我们不能控制这些第三方链接的行为和隐私政策，因此我们建议您在访问这些链接之前仔细阅读他们的隐私政策。
+
+                6. 隐私政策的更新
+                我们可能会不时更新本隐私政策。如果我们做出重大改变，我们会在平台上发布通知。如果您继续使用我们的平台，即表示您同意更新后的隐私政策。
+            </text>
+
+        </view>
+        <view class="  shadow margin radius bg-white padding text-lg">
+            <view class="user">用户协议</view>
+            <text>
+                欢迎使用我们的校园兼职平台。本用户协议规定了您使用我们的平台的条件和规则。请在使用前仔细阅读本协议。
+
+                1. 平台使用
+                您可以通过注册账户使用我们的平台。您应当保证提供的个人信息完整、真实和准确。您应当妥善保管您的账户和密码，确保不会泄露给第三方。
+
+                2. 任务发布和接受
+                您可以在平台上发布任务，也可以接受其他用户发布的任务。您应当遵守平台的任务发布规则，并确保发布的任务合法、真实和准确。您应当在任务要求的期限内完成任务，并确保任务质量符合要求。
+
+                3. 交易和支付
+                您可以在平台上进行交易和支付。您应当确保交易信息真实、准确和完整。您应当在任务完成后及时确认交易，如果出现争议，应当积极联系客服解决。您应当采取安全措施保护自己的支付信息，不要将支付信息泄露给第三方。
+
+                4. 知识产权
+                平台上的所有内容，包括但不限于文字、图片、视频、图标、标志、软件、源代码等，均受知识产权法律保护。未经平台所有者的明确授权，您不得复制、修改、传播、使用或利用这些内容。
+
+                5. 免责条款
+                我们会尽力保证平台的安全、准确和可靠，但我们不能保证平台上的信息和服务没有错误、缺陷、中断或延迟。我们不对您在平台上的行为和交易负责。您应当自行承担使用平台的风险和责任。
+
+                6. 隐私保护
+                我们会采取适当的措施保护您的隐私，但我们不能保证您的个人信息不会被泄露、篡改或损毁。您应当自行采取措施保护您的隐私。
+
+                7. 协议变更
+                我们可能会不时更新本协议，如果我们做出重大改变，我们会在平台上发布通知。如果您继续使用我们的平台，即表示您同意更新后的用户协议。
+
+                8. 法律适用
+                本协议适用中华人民共和国法律。如本协议任何条款与中华人民共和国法律相抵触，则该条款将被视为无效，但不影响其他条款的效力。
+            </text>
+
+        </view>
+    </scroll-view>
+</van-popup>

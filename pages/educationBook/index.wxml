@@ -1,0 +1,95 @@
+<scroll-view>
+    <wxs src="../../utils/util.wxs" module="filters" />
+    <view class="header">
+        <view class="top_content">
+            <view class="title">
+                {{detail_data.title}}
+            </view>
+            <!-- <view class="time">
+                {{filters.formatDate(detail_data.send_time)}}
+            </view> -->
+        </view>
+        <view class="middle_content">
+            <view class="left_content">
+                <image src="{{detail_data.send_avatar}}" mode="" />
+            </view>
+            <view class="send_info">
+                <view class="top_userinfo">
+                    <text>{{detail_data.send_name}}</text>
+                </view>
+                <view class="bottom_time">
+                    <text>{{filters.formatDate(detail_data._createTime)}}</text>
+                </view>
+
+            </view>
+        </view>
+    </view>
+    <view class="wiriteDetail">
+        <view class="detail" selectable="true" user-select>
+            <wxParse user-select nodes="{{content}}"></wxParse>
+        </view>
+        <view class="image_box">
+            <block wx:for="{{detail_data.image}}" wx:key="index">
+                <image data-list="{{detail_data.image}}"  data-src="{{item}}"  bindtap="imgDetail" src="{{item}}" mode="widthFix" />
+            </block>
+        </view>
+    </view>
+    <text class="border-line"></text>
+   <view class="comment_middle">
+    <view class="middle_content">
+        <view class="comment_send_box">
+            <form catchsubmit="publish">
+                <view class="cu-form-group">
+                    <textarea name="content" style="color: rgb(0, 0, 0); font-size: 40rpx;padding: 10rpx;" bindinput="handleInput" value="{{inputValue}}" maxlength="-1" placeholder="分享一下您的观点吧~~~"></textarea>
+                </view>
+                <view class="padding flex  flex-wrap ">
+                    <button class=" bg-cyan shadow-blur flex-sub round" formType="reset">内容清空</button>
+                    <button class=" bg-blue shadow-blur flex-sub round" formType="submit">发布评论</button>
+                </view>
+
+            </form>
+        </view>
+        <view class="comment">
+            <text>最新评论</text>
+        </view>
+        <block wx:if="{{comment.length==0}}">
+            <empty top="30" width="220" height="220" content="暂时没有评论"></empty>
+        </block>
+        <block wx:else>
+            <block wx:for="{{comment}}" wx:key="index">
+                <view class="comment_list">
+                    <view class="userinfo">
+                        <view class="avatar">
+                            <image src="{{item.avatar}}" mode="" />
+                        </view>
+                        <view class="username">
+                            <text>{{item.username}}</text>
+                        </view>
+                        <view class="time">
+                            <text>{{filters.formatDate(item.sendTime)}}</text>
+                        </view>
+                    </view>
+                    <view class="comment_content">
+                        <text>{{item.content}}</text>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </view>
+   </view>
+</scroll-view>
+
+
+<view class="submit_box" bindtap="goCollcet">
+    <view class="upload">
+        <block wx:if="{{isFavorited}}">
+            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/write_icon/favor.png" mode="" />
+            <view>已收藏</view>
+        </block>
+        <block wx:else>
+            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/write_icon/no_favor.png" mode="" />
+            <view>未收藏</view>
+        </block>
+
+    </view>
+</view>

@@ -1,0 +1,75 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<van-tabs active="{{ active }}" color="#078CF0" >
+    <van-tab title="论坛帖子">
+        <view class="containers">
+            <block wx:if="{{chatdata.length>0}}">
+                <block wx:for="{{chatdata}}" wx:key="index">
+                    <view class="log_box">
+                        <view>发布时间：
+                            <text style="color: gray;">{{filters.formatDate(item._createTime)}}</text>
+                        </view>
+                        <view>发布内容：
+                            <text style="color: gray;">{{item.content}}</text>
+                        </view>
+                        <view class="btn">
+                            <button class="cu-btn round line-red" bindtap="cancleData" data-database="chatdata" data-id="{{item._id}}">
+                                <text>删除内容</text>
+                            </button>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <block wx:else>
+                <empty top="30" width="220" height="220" content="暂无数据"></empty>
+            </block>
+        </view>
+    </van-tab>
+    <van-tab title="成长档案">
+        <view class="containers">
+            <block wx:if="{{readingdata.length>0}}">
+                <block wx:for="{{readingdata}}" wx:key="index">
+                    <view class="log_box">
+                        <view>发布时间：
+                            <text style="color: gray;">{{filters.formatDate(item._createTime)}}</text>
+                        </view>
+                        <view>发布内容：
+                            <text style="color: gray;">{{item.content}}</text>
+                        </view>
+                        <view class="btn">
+                            <button class="cu-btn round line-red" bindtap="cancleData" data-database="chatdata" data-id="{{item._id}}">
+                                <text>删除内容</text>
+                            </button>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <block wx:else>
+                <empty top="30" width="220" height="220" content="暂无数据"></empty>
+            </block>
+        </view>
+    </van-tab>
+    <van-tab title="建言献策">
+        <view class="containers">
+            <block wx:if="{{readingdata.length>0}}">
+                <block wx:for="{{readingdata}}" wx:key="index">
+                    <view class="log_box">
+                        <view>发布时间：
+                            <text style="color: gray;">{{filters.formatDate(item._createTime)}}</text>
+                        </view>
+                        <view>发布内容：
+                            <text style="color: gray;">{{item.content}}</text>
+                        </view>
+                        <view class="btn">
+                            <button class="cu-btn round line-red" bindtap="cancleData" data-database="write" data-id="{{item._id}}">
+                                <text>删除内容</text>
+                            </button>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <block wx:else>
+                <empty top="30" width="220" height="220" content="暂无数据"></empty>
+            </block>
+        </view>
+    </van-tab>
+</van-tabs>

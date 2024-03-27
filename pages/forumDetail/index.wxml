@@ -1,0 +1,91 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<scroll-view>
+    <view class="top_info">
+        <view class="userInfo">
+            <view class="avatar">
+                <image src="{{detail_data.avatar}}" mode="" />
+            </view>
+            <view class="username">
+                <view class="name">{{detail_data.username}}</view>
+                <view class="classname">{{detail_data.classname}}</view>
+            </view>
+        </view>
+        <view class="chat_info">
+            <view class="time">
+                <text>{{filters.formatDate(detail_data._createTime)}}</text>
+            </view>
+            <view class="userClick">
+                <view class="good">
+                    <van-icon name="comment-o" />
+                    <text>{{detail_data.comment.length}}</text>
+                </view>
+                <view class="comment">
+                    <van-icon name="good-job-o" />
+                    <text>{{good}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="content_info">
+            <view class="chat_content">
+                <text>{{detail_data.content}}</text>
+            </view>
+        </view>
+        <view wx:if="{{detail_data.image.length>0}}">
+            <view class="image_box">
+                <block wx:for="{{detail_data.image}}" wx:key="index">
+                    <image bindtap="previewImage" src="{{item}}" mode="" data-item="{{item}}" />
+                </block>
+            </view>
+
+        </view>
+    </view>
+    <view class="bottom_info">
+        <view class="top_title">
+            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/comment.png" mode="" />
+            <view class="title">全部评论</view>
+        </view>
+        <view wx:if="{{detail_data.comment.length==0}}">
+            <empty top="30" width="220" height="220" content="暂时没有评论"></empty>
+        </view>
+        <view wx:else>
+            <block wx:for="{{comment}}" wx:key="index">
+                <view class="comment_list">
+                    <view class="userinfo">
+                        <view class="avatar">
+                            <image src="{{item.avatar}}" mode="" />
+                        </view>
+                        <view class="username">
+                            <text>{{item.username}}</text>
+                        </view>
+                        <view class="time">
+                            <text>{{filters.formatDate(item.sendTime)}}</text>
+                        </view>
+                    </view>
+                    <view class="comment_content">
+                        <text>{{item.content}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</scroll-view>
+<view class="fix_bottom_box">
+    <view class="left_input_content">
+        <view class="input_box" bindtap="showPopup" data-id="popup1">
+            <text>我来说两句</text>
+        </view>
+    </view>
+    <view class="right_click" bindtap="commentShow">
+        <image bindtap="click" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/like.png" mode="" />
+    </view>
+</view>
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <view class="comment_box" bindblur="hideInput">
+        <view class="cu-form-group ">
+            <textarea class="comment_textarea" name="content" maxlength="-1" bindinput="handleInput" value="{{inputValue}}" placeholder="请输入评论内容~~~"></textarea>
+        </view>
+        <view class="buttons" bindtap="sendComment">
+            <button class="bg-green cu-btn round lg ">立即评论</button>
+        </view>
+    </view>
+</van-popup>

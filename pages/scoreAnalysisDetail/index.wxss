@@ -1,0 +1,132 @@
+/* pages/scoreAnalysisDetail/index.wxss */
+.top_title {
+
+    background-color: #FFFFFF;
+    padding: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.top_title .name {
+    font-size: 40rpx;
+    text-align: center;
+    color: rgb(41, 41, 250);
+    font-weight: 700;
+}
+
+.top_title .class_name {
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: 650;
+    color: #333;
+    margin-top: 10rpx;
+}
+
+.score_box {
+    margin: 0 auto;
+    margin-top: 5rpx;
+}
+
+.score_box .top_content {
+    padding-top: 30rpx;
+    padding-left: 20rpx;
+    padding-bottom: 10rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60rpx;
+    font-size: 40rpx;
+    background-color: #fff;
+}
+
+.score_box .top_content .commen {
+    color: #ff1515;
+    font-weight: 700;
+    font-size: 35rpx;
+    margin-right: 10rpx;
+    line-height: 60rpx;
+}
+
+.score_detail {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.score_detail .score_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 40rpx;
+    height: 50rpx;
+    background-color: #fff;
+}
+.score_detail .value {
+    width: 20%;
+}
+.score_detail .value .value_item {
+    font-size: 30rpx;
+    font-weight: 650;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.score_detail .subject {
+    font-size: 40rpx;
+    font-weight: 700;
+    width: 33%;
+}
+
+.score_detail .score {
+    width: 50%;
+    margin-left: 50rpx;
+}
+
+
+.score_detail .score .score_item {
+    font-size: 40rpx;
+    font-weight: 700;
+    color:#5f5f5f;
+}
+
+
+.chart_score {
+    margin: 0 auto;
+    margin-top: 5rpx;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart_score canvas {
+    margin-top: 20rpx;
+}
+
+.analysis_box {
+    margin-top: 10rpx;
+    background-color: #FFFFFF;
+    width: 100%;
+    padding-bottom: 20rpx;
+}
+
+.analysis_box .teacher_value {
+    padding-top: 20rpx;
+    padding-left: 30rpx;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.analysis_box .analysis_content {
+    padding: 10rpx;
+    padding-bottom: 30rpx;
+}
+
+.analysis_box .analysis_content text {
+    padding-left: 20rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+}

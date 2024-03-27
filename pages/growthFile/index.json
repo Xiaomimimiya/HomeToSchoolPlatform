@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-tab": "/components/vantui/tab/index",
+        "van-tabs": "/components/vantui/tabs/index",
+        "empty":"/components/empty/empty"
+    },
+    "navigationBarTitleText": "成长档案"
+}

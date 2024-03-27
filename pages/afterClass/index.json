@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "van-popup":"/components/vantui/popup/index",
+        "van-rate": "/components/vantui/rate/index",
+        "van-notice-bar": "/components/vantui/notice-bar/index"
+    },
+    "navigationBarTitleText": "课后服务"
+}

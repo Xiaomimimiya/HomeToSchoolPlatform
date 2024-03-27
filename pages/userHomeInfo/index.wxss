@@ -1,0 +1,42 @@
+page {
+    background-color: #fff;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo image {
+    width: 300rpx;
+    height: 290rpx;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo view {
+    /* color: grey; */
+    opacity: 0.6;
+}
+
+.userinfo-nickname {
+    margin-top: 30rpx;
+    font-size: 48rpx;
+    font-weight: 650;
+    
+}
+
+.comm {
+    color: #999999;
+    font-size: 40rpx;
+}
+
+.infobox {
+    width: 90%;
+    margin: 0 auto;
+    margin-top:50rpx;
+    margin-right: 50rpx;
+}

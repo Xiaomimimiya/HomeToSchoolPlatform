@@ -1,0 +1,34 @@
+page {
+    background-color: #F2F3FB;
+}
+
+
+
+button {
+    width: 150rpx !important;
+}
+
+
+.pub-button {
+    color: #F3FAF4;
+    background-color: #19abff;
+    height: 60rpx;
+    width: 60rpx;
+    text-align: center;
+    border-radius: 99999rpx;
+    margin-left: 20rpx;
+}
+
+
+.pub-button-with-text {
+    color: #F3FAF4;
+
+    background-color: #39B54A;
+    height: 50rpx;
+    width: 80rpx;
+    margin-left: 60rpx;
+    padding: 10rpx 10rpx;
+
+    line-height: 50rpx;
+    text-align: center;
+}

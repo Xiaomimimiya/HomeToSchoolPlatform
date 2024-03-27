@@ -1,0 +1,157 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<van-notice-bar background="#ECF9FF" color='#1989FA' scrollable left-icon="volume-o" text="关于开展学生宿舍安全用电的宣传活动，正在进行中！" />
+<van-tabs sticky color="#5D5CDE">
+    <van-tab title="宿舍指南">
+        <view class="cu-list grid col-2 " style="margin-top: 1rpx;">
+            <view class="cu-item">
+                <view class="cuIcon-news text-green">
+                </view>
+                <van-cell title="我的宿舍" bindtap="showPopup" data-id="popup1" />
+            </view>
+            <view class="cu-item">
+                <view class="cuIcon-rank text-cyan">
+                </view>
+                <van-cell title="卫生分数" bindtap="showPopup" data-id="popup2" />
+            </view>
+            <view class="cu-item">
+                <view class="cuIcon-edit text-blue">
+                </view>
+                <van-cell title="后勤服务" bindtap="showPopup" data-id="popup6" />
+            </view>
+            <view class="cu-item">
+                <view class="cuIcon-question text-purple">
+                </view>
+                <van-cell title="常见问题" bindtap="showPopup" data-id="popup5" />
+            </view>
+
+        </view>
+
+        <view class="cu-bar bg-white margin-top-xs">
+            <view class="action border-title">
+                <text class="text-xl text-bold text-blue">每周优秀宿舍</text>
+                <text class="bg-gradual-blue" style="width:4rem"></text>
+            </view>
+        </view>
+        <view class="best_acc">
+            <block wx:for="{{BestAcc}}" wx:key="index">
+                <view class="best_acc_box">
+                    <view class="acc_item">
+                        <image src="{{item.image}}" bindtap="previewImage" data-item="{{item.image}}" mode="" />
+                        <text>{{item.number}}</text>
+                        <text style="color: #666; font-size: 20rpx;">{{item.classname}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="cu-bar bg-white margin-top-xs">
+            <view class="action border-title">
+                <text class="text-xl text-bold text-blue">宿舍通知公告</text>
+                <text class="bg-gradual-blue" style="width:4rem"></text>
+            </view>
+        </view>
+        <block wx:for="{{accnotices}}" wx:key="index">
+            <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+                <view class="left">
+                    <view class="left_top_desc">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="left_bottom_desc">
+                        <view class="department">
+                            <text>{{item.senduser}}</text>
+                        </view>
+                        <view class="send_time">
+                            <text>{{filters.formatXie(item._createTime)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="right">
+                    <image src="{{item.cover}}" mode="" />
+                </view>
+            </view>
+        </block>
+    </van-tab>
+    <van-tab title="每周食谱">
+        <view class="margin-tb-sm text-center">
+            <button bindtap="goSend" class="cu-btn round bg-blue">食谱建议</button>
+        </view>
+        <view class="food_box">
+            <block wx:for="{{weekrecipes}}" wx:key="index">
+                <view class="food_box_item">
+                    <view class="left_image">
+                        <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/food_image.png" mode="" />
+                    </view>
+                    <view class="middle_content">
+                        <view class="top_title">{{item.week}}</view>
+                        <view class="middle_detail" bindtap="showPopup" data-id="popup10" data-image="{{weekrecipes[index].images}}">查看详情</view>
+                    </view>
+                    <view class="left_time">
+                        <text>{{item.sendtime}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </van-tab>
+
+    <van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+        <view class="accomoda_info_box">
+            <van-cell-group>
+                <van-field size="large" label="姓名" value="张雨萱" readonly input-align="middle" reading />
+                <van-field size="large" label="性别" value="女" readonly input-align="middle" reading />
+                <van-field size="large" label="班级" value="初二01班" readonly input-align="middle" reading />
+                <van-field size="large" label="类别" value="住宿生" readonly input-align="middle" reading />
+                <van-field size="large" label="住宿信息" value="A区-A3栋-502-4号床" readonly input-align="middle" reading />
+                <van-field size="large" label="家长联系方式" value="156xxxx6931" readonly input-align="middle" reading />
+            </van-cell-group>
+
+        </view>
+    </van-popup>
+    <van-popup show="{{popup2.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup2">
+        <view class="health_score">
+            <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+                <block wx:for="{{5}}" wx:key="index">
+                    <van-collapse-item title="时间：第{{index+1}}周">
+                        <view class="item_box">
+                            <view class="acc_name">
+                                <text style="color: #444;">宿舍号：</text>
+                                <text>A10栋 502</text>
+                            </view>
+                            <view class="acc_score">
+                                <text style="color: #444;">分数：</text>
+                                <text>73.21分</text>
+                            </view>
+                        </view>
+                    </van-collapse-item>
+                </block>
+            </van-collapse>
+        </view>
+    </van-popup>
+    <van-popup show="{{popup3.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup3">内容111</van-popup>
+    <van-popup show="{{popup4.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup4">内容111</van-popup>
+    <van-popup show="{{popup5.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup5">
+        常见问题
+    </van-popup>
+    <van-popup show="{{popup6.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup6">
+        <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+            <block wx:for="{{logisticsData}}" wx:key="index">
+                <van-collapse-item title="{{item.title}}">
+                    <view class="item_box">
+
+                        <view class="acc_score">
+                            <text style="color: #444;">{{item.content}}</text>
+
+                        </view>
+                    </view>
+                </van-collapse-item>
+            </block>
+        </van-collapse>
+    </van-popup>
+
+    <van-popup show="{{popup10.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup10">
+        <view class="recipe_box">
+            <view class="title">食谱详情清单</view>
+            <block wx:for="{{recipeimage}}" wx:key="index">
+                <image bindtap="previewImage" data-item="{{item}}" src="{{item}}" mode="" />
+            </block>
+        </view>
+    </van-popup>
+</van-tabs>

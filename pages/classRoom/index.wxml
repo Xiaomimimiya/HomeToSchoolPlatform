@@ -1,0 +1,305 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<block wx:if="{{!userInfo}}">
+    <empty top="30" width="260" height="260" content="您还未登录"></empty>
+</block>
+<block wx:else>
+    <view class="classInfo">
+        <view class="top_content">
+            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/classRoom_icon/flag.png" mode="" />
+            <view class="className">
+                {{userInfo.classname}}
+            </view>
+            <view class='cu-tag round bg-blue' style="margin-left: 30rpx;">班主任：{{classData[0].headteacher}}</view>
+        </view>
+        <view class="middle_content">
+            <view class="class_style">
+                <view class='cu-tag line-cyan round'>班级宣言：{{classData[0].classstyle}}</view>
+            </view>
+        </view>
+        <view class="bottom_content">
+            <view class="left">
+                <view class='cu-tag radius line-blue'>任课老师</view>
+                <view class="commen">{{classData[0].teachernumber}}</view>
+            </view>
+            <view class="middle">
+                <view class='cu-tag radius line-green'>班级学生</view>
+                <view class="commen">{{classData[0].studentnumber}}</view>
+            </view>
+            <view class="right">
+                <view class='cu-tag radius line-cyan'>家委成员</view>
+                <view class="commen">{{classData[0].teachernumber}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="content_box">
+        <view class="cu-list grid col-4 border">
+            <view class="cu-item" bindtap="showPopup" data-id="popup1">
+                <view class="grid_images">
+                    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/people.png" mode="" />
+                </view>
+                <view class="grid_text">
+                    <text>班级成员</text>
+                </view>
+            </view>
+            <view class="cu-item" bindtap="showPopup" data-id="popup2">
+                <view class="grid_images">
+                    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/image.png" mode="" />
+                </view>
+                <view class="grid_text">
+                    <text>班级相册</text>
+                </view>
+            </view>
+            <view class="cu-item" bindtap="showPopup" data-id="popup3">
+                <view class="grid_images">
+                    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/money.png" mode="" />
+                </view>
+                <view class="grid_text">
+                    <text>班费公开</text>
+                </view>
+            </view>
+            <view class="cu-item" bindtap="showPopup" data-id="popup4">
+                <view class="grid_images">
+                    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/class_student.png" mode="" />
+                </view>
+                <view class="grid_text">
+                    <text>优秀学生</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="desc_content_box">
+        <view class="desc_content">
+            <van-tabs active="{{ active }}" line-width="100rpx" color="blue">
+                <van-tab title="班级通知">
+                    <block wx:for="{{noticeData}}" wx:key="indx">
+                        <view class="content_list">
+                            <view class="content_title">
+                                <view class="left_title">
+                                    <view class="left_title_desc">
+                                        <text>{{noticeData[index].noticehead}}</text>
+                                    </view>
+                                </view>
+                                <view class="right_button" bindtap="showPopup" data-id="popup5" data-title="{{noticeData[index].noticehead}}" data-content="{{noticeData[index].noticecontent}}">
+                                    <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/profile_icon/arrow.png" mode="" />
+                                </view>
+                            </view>
+                            <view class="middle_desc">
+                                <view class="left_send_name">
+                                    <text>发布者：{{noticeData[index].senduser}}</text>
+                                </view>
+                                <view class="right_send_time">
+                                    <text>{{ filters.formatXie(noticeData[index].sendtime)}}</text>
+                                </view>
+                            </view>
+
+                        </view>
+                        <view class="line" style="border-bottom: 1px solid rgb(236, 236, 236);"></view>
+                    </block>
+                </van-tab>
+                <van-tab title="班级圈子">
+                    <scroll-view>
+                        <block wx:for="{{chatList}}" wx:key="index">
+                            <view class="chat_box">
+                                <view class="top_info">
+                                    <view class="avatar">
+                                        <image src="{{item.avatar}}" mode="" />
+                                    </view>
+                                    <view class="userinfo">
+                                        <view class="username">
+                                            <text>{{item.username}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="middle_info">
+                                    <view class="middle_content" bindtap="goDetail" data-id="{{item._id}}">
+                                        <text>{{item.content}}</text>
+                                    </view>
+                                    <view wx:if="{{item.image.length>0}}">
+                                        <view class="middle_image">
+                                            <block wx:for="{{item.image}}" wx:key="index">
+                                                <image bindtap="previewImage" src="{{item}}" mode="" data-item="{{item}}" />
+                                            </block>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="bottom_info">
+                                    <view class="time">
+                                        <text>{{filters.formatXie(item._createTime)}}</text>
+                                    </view>
+                                    <view class="click_info">
+                                        <view class="comment">
+                                            <van-icon name="comment-o" />
+                                            <text>{{item.comment.length}}</text>
+                                        </view>
+                                        <view class="good_click">
+                                            <van-icon name="good-job-o" />
+                                            <text>{{item.good}}</text>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                    <view class="submit_box" bindtap="goSend">
+                        <view class="upload">
+                            <image src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/chat_icon/message.png" mode="" />
+                            <view>发帖</view>
+                        </view>
+                    </view>
+                </van-tab>
+                <van-tab title="今日课程">
+                    <view class="range_title">
+                        <view class="range_left">
+                            <text>节数</text>
+                        </view>
+                        <view class="range_middle">
+                            <text>课程名</text>
+                        </view>
+                        <view class="range_right">
+                            <text>授课老师</text>
+                        </view>
+                    </view>
+                    <view class="range_box">
+                        <block wx:if="{{ toDay_Class.length==0 && !userInfo}}">
+                            <empty top="30" width="220" height="220" content="您还未登录"></empty>
+                        </block>
+                        <block wx:elif="{{toDay_Class.length==0}}">
+                            <empty top="30" width="220" height="220" content="今天的休息日"></empty>
+                        </block>
+                        <block wx:else>
+                            <block wx:for="{{toDay_Class}}" wx:key="index">
+                                <view class="range_list" style="background-color: {{class_color[index]}};">
+                                    <view class="range_left">
+                                        第{{index+1}}节
+                                    </view>
+                                    <view class="range_middle">
+                                        <text>{{item.classname}}</text>
+                                    </view>
+                                    <view class="range_right">
+                                        <text>{{item.teachername}}</text>
+                                    </view>
+                                </view>
+                            </block>
+                        </block>
+                    </view>
+                </van-tab>
+            </van-tabs>
+        </view>
+    </view>
+</block>
+
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <block wx:for="{{classPeople}}" wx:key="index">
+        <view class="people_list">
+            <view class="left_image">
+                <image src="{{item.useravatar}}" mode="" />
+            </view>
+            <block wx:if="{{item.usertype==='家长'}}">
+                <view class="middle_name">
+                    <text>{{item.username}}家长</text>
+                </view>
+            </block>
+            <block wx:if="{{item.usertype==='教师'}}">
+                <view class="middle_name">
+                    <text>{{item.username}}老师</text>
+                </view>
+            </block>
+            <view class="right_image" bindtap="startChat" data-item="{{item}}"  >
+                <image  src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/send_chat.png" mode="" />
+            </view>
+        </view>
+    </block>
+</van-popup>
+<van-popup show="{{popup2.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup2">
+    <view class="ablum_title">
+        <view class="margin-tb-sm text-center" bindtap="sendablum">
+            <button class="cu-btn round bg-blue">照片上传</button>
+        </view>
+    </view>
+    <view class="ablum_box">
+        <block wx:for="{{ablumData}}" wx:key="index">
+            <view class="class_ablum">
+                <view class="class_ablum_box">
+                    <image src="{{item.imagelist[0]}}" mode="" />
+                    <text>{{item.type}}</text>
+                </view>
+                <view class="margin-tb-sm text-center">
+                    <button class="cu-btn round line-blue" bindtap="goAblum" data-id="{{item._id}}">立即浏览</button>
+                </view>
+            </view>
+        </block>
+    </view>
+</van-popup>
+<van-popup show="{{popup3.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup3">
+    <view class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-blue">班费余额：{{MoneyData[0].balance}}元</button>
+    </view>
+
+    <van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+        <block wx:for="{{MoneyData[0].useinfo}}" wx:key="index">
+            <van-collapse-item title="第{{index+1}}次支出" name="{{index}}">
+                <view class="moneny_content">
+                    <view class="use_name">
+                        <text style="color:gray;">支出项目：</text>
+                        <text class="title">{{item.title}}</text>
+                    </view>
+                    <view class="use_money">
+                        <text style="color:gray;">支出金额：</text>
+                        <text class="title">{{item.money}}/元</text>
+                    </view>
+                    <view class="use_name">
+                        <text style="color:gray;">支出时间：</text>
+                        <text class="title">{{item.time}}</text>
+                    </view>
+                    <view class="use_desc">
+                        <text style="color:gray;">支出描述：</text>
+                        <text class="title">{{item.desc}}</text>
+                    </view>
+                </view>
+            </van-collapse-item>
+        </block>
+
+    </van-collapse>
+    <view class="margin-tb-sm text-center" bindtap="sendMoney">
+        <button class="cu-btn round bg-blue">支出/增加记账</button>
+
+    </view>
+
+</van-popup>
+<van-popup show="{{popup4.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup4">
+    <view class="best_student">
+        <block wx:for="{{5}}" wx:key="index">
+            <view class="best_stu_box">
+                <view class="left_image">
+                    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/student_image.png" mode="" />
+                </view>
+                <view class="middle_conent">
+                    <view class="top_info">
+                        <view class="name">
+                            <text>小李同学</text>
+                        </view>
+                        <view class="card">
+                            <view class='cu-tag round line-cyan mini'>
+                                <text>学习标兵</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="middle_desc">
+                        <text>能够在班级中表现出较好的成绩</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</van-popup>
+<van-popup show="{{popup5.show}}" position="bottom" close-on-click-overlay="false" custom-style="height:70%" bind:close="onClose" data-id="popup5">
+    <view class="notice_box">
+        <view class="notice_title">
+            <text>{{classnoticetitle}}</text>
+        </view>
+        <view class="line" style="border-bottom: 1px solid rgb(175, 175, 175);"></view>
+        <view class="detail" style="margin-top: 10rpx;" selectable="true" user-select>
+            <wxParse user-select nodes="{{classnoticeData}}"></wxParse>
+        </view>
+    </view>
+</van-popup>

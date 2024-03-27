@@ -1,0 +1,341 @@
+.top_image {
+    width: 100%;
+}
+
+.top_image image {
+    width: 100%;
+    height: 400rpx;
+}
+
+.grid_images image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.grid_text {
+    font-size: 40rpx;
+    font-weight: 650;
+}
+
+.cu-item text {
+    color: rgb(39, 39, 39) !important;
+}
+
+.message_wall {
+    margin: 0 auto;
+    width: 98%;
+    border-radius: 22rpx;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 20rpx;
+}
+
+.top_info {
+    display: flex;
+    align-items: center;
+}
+
+.top_info .avatar image {
+    margin-left: 30rpx;
+    margin-top: 15rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.top_info .username {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    color: blue;
+}
+
+.top_info .send_time {
+    position: absolute;
+    right: 30rpx;
+}
+
+.middle_content {
+    margin: 0 auto;
+    width: 94%;
+    background-color:#c5413c;
+    padding: 10rpx;
+    border-radius: 22rpx;
+    margin-bottom: 10rpx;
+    text-align: center;
+}
+.middle_content .class_name{
+    color: #FFFFFF;
+}
+
+/* 查看更多 */
+.right_text {
+    margin-right: 10rpx;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.right_text image {
+    width: 40rpx;
+    height: 40rpx;
+}
+/* 教师盒子 */
+.teacher_box {
+    width: 96%;
+    margin: 0 auto;
+    
+    margin-top: 10rpx;
+    border-radius: 22rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.teacher_item {
+    width: 24%;
+    border-radius: 22rpx;
+    background-color: #fff;
+    
+}
+
+
+
+.teacher_box .teacher_item image {
+    width: 100%;
+    margin: 0 auto;
+   
+    height: 200rpx;
+    border-top-left-radius: 22rpx;
+    border-top-right-radius: 22rpx;
+}
+
+.teacher_box .teacher_item .middle_name {
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+.van-popup{
+    border-radius: 22rpx;
+    background-color: #EFF0F0 !important;
+}
+/* 学校简介 */
+.schood_desc_box{
+    width: 94%;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 30rpx;
+    border-radius: 22rpx;
+    padding-bottom: 20rpx;
+}
+.schood_desc_box .top_desc{
+    margin-top: 10rpx;
+}
+.top_desc .top_name{
+    font-size: 40rpx;
+    font-weight: 600;
+    padding: 10rpx;
+    margin-left: 20rpx;
+}
+.top_desc .top_info{
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    padding: 5rpx;
+    margin-bottom: 10rpx;
+}
+.top_desc .top_icon{
+    width: 100%;
+    margin-left: 20rpx;
+}
+
+.middle_desc{
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+}
+.desc_comm{
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.addres_site{
+    width: 94%;
+    height: 70rpx;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    border-radius: 22rpx;
+    background-color: #F5F5F5;
+
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+}
+.desc_info{
+    padding: 20rpx;
+}
+
+/* 校园风光 */
+
+.class_box {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.class_box .class_item {
+    width: 47%;
+    border-radius: 16rpx;
+    background-color: #FFFFFF;
+    margin-bottom: 15rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    box-shadow: 4rpx 8rpx 8rpx rgba(233, 225, 225, 0.3);
+}
+.class_item .top_content image {
+    width: 100%;
+    height: 300rpx;
+    padding: 20rpx;
+    border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx;
+}
+
+.class_item .middle_content {
+    width: 90%;
+    margin: 0 auto;
+   
+    margin-bottom: 15rpx;
+}
+
+.class_item .middle_content .class_name {
+
+    font-size: 30rpx;
+    font-weight: 700;
+    font-family: serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 校园地图 */
+.image_box{
+    width: 98%;
+    margin: 0 auto;
+
+}
+.image_box image{
+    margin-top: 10rpx;
+    border-radius: 22rpx;
+    width: 100%;
+   
+}
+
+/* 新闻盒子 */
+.news_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    margin-top: 5rpx;
+    border-radius: 16rpx;
+    height: 160rpx;
+    margin-bottom: 10rpx;
+
+}
+
+.news_box .left {
+    position: relative;
+    width: 75%;
+    margin-left: 15rpx;
+    margin-right: 10rpx;
+    height: 120rpx;
+}
+
+.news_box .left .left_top_desc {
+    font-size: 30rpx;
+    color: #444;
+    margin-bottom: 10rpx;
+    /* 显示两行 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.news_box .left .left_bottom_desc {
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 28rpx;
+    position: absolute;
+    left: 0;
+    bottom: -10rpx;
+}
+
+.left .left_bottom_desc .send_time {
+    margin-left: 5rpx;
+}
+
+.news_box .right {
+    width: 25%;
+    margin-left: 10rpx;
+}
+
+.news_box .right image {
+    width: 160rpx;
+    height: 130rpx;
+    border-radius: 12rpx;
+}
+.moreNewsBox{
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 10rpx;
+}
+
+/*  xiaoshi*/
+.item_list{
+    background-color: #841B17;
+    color: #ffff;
+    font-size: 50rpx;
+    font-weight: 650;
+}
+.title{
+    padding: 10rpx;
+    margin-bottom: 10rpx;
+    margin-top: 10rpx;
+}
+/* 风光 */
+.ablum_box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.class_ablum {
+    width: 48%;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    background-color: #fff;
+    border-radius: 22rpx;
+}
+
+.class_ablum_box image {
+    width: 100%;
+    height: 320rpx;
+    border-top-left-radius: 22rpx;
+    border-top-right-radius: 22rpx;
+}
+
+.class_ablum_box text {
+    display: block;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.class_ablum button {
+    width: 180rpx;
+    height: 50rpx;
+    font-size: 28rpx;
+}

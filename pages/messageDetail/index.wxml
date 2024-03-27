@@ -1,0 +1,29 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<scroll-view  class="cu-chat">
+    <block wx:for="{{chat_detail.message}}" wx:key="index">
+        <view class="cu-item self" wx:if="{{item.send_user_id === userInfo._id}}">
+            <view class="main">
+                <view class="content shadow" style="background:#89D961">
+                    <text>{{item.content}}</text>
+                </view>
+                <view class="date">{{filters.formatDate(item.time)}}</view>
+            </view>
+            <view class="cu-avatar" style="background-image:url({{userInfo.useravatar}});"></view>
+        </view>
+        <view class="cu-item"  wx:else="{{item.send_user_id === chat_detail.recever_user_id}}">
+            <view class="main">
+                <view class="content shadow" style="background:#FFFFFF">
+                    <text>{{item.content}}</text>
+                </view>
+                <view class="date" style="margin-left: -80rpx !important;">{{filters.formatDate(item.time)}}</view>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+<view class="cu-bar foot input" :style="[{bottom:InputBottom+'rpx'}]">
+    <input class="solid-bottom" bindinput="handleInput" value="{{inputValue}}" :adjust-position="false" :focus="false" maxlength="300" cursor-spacing="10"></input>
+    <view class="action">
+        <text class="cuIcon-camera text-grey"></text>
+    </view>
+    <button class="cu-btn bg-green shadow .pub-button{{inputValue==''?'':'-with-text'}}" bindtap="publishMessage">发送</button>
+</view>

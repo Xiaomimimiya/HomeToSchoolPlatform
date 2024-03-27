@@ -1,0 +1,271 @@
+page {
+    background-color: #F4F5F7;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    background-color: #fff;
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 20rpx;
+    margin-top: 5rpx;
+}
+
+.header .userinfo-avatar {
+    margin-left: 30rpx;
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.header .userinfo-nickname {
+    margin-left: 50rpx;
+    margin-top: 30rpx;
+}
+
+.userinfo-nickname .top_info {
+    display: flex;
+    align-items: center;
+}
+
+.header .userinfo-nickname .name {
+
+    font-weight: 750;
+
+    font-size: 45rpx;
+}
+
+.userinfo-nickname .usertype {
+    margin-left: 30rpx;
+}
+
+.userinfo-nickname .usertype text {
+    padding: 5rpx;
+
+}
+
+.header .userinfo-nickname .desc {
+    margin-top: 10rpx;
+    font-size: 35rpx;
+    color: #9D9DA5;
+}
+
+.UserInfo {
+    position: absolute;
+    margin-top: 10rpx;
+    right: 50rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.btn-login {
+    padding: 8%;
+    background: white;
+}
+
+.userinfo-avatar {
+    border-radius: 110rpx;
+    width: 110rpx;
+    height: 110rpx;
+    margin-block-start: 10px;
+}
+
+.user_name_info {
+    display: flex;
+    text-align: center;
+}
+
+.userinfo-nickname {
+    margin-top: 20rpx;
+    font-size: 38rpx;
+}
+
+.runner_desc {
+    font-size: 10pt;
+    color: red
+}
+
+.dizhizi {
+    color: white
+}
+
+.dizhi {
+    margin-top: 200px;
+}
+
+.button {
+    width: 100%;
+    background: white;
+    border: none;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    font-size: 16px
+}
+
+/*  下面是 除边框 */
+.button::after {
+    border: none;
+    border-radius: 0;
+}
+
+/* 两个条形框 */
+.review_box {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 16rpx;
+    padding: 10rpx;
+}
+
+.top_box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8rpx;
+}
+
+.top_box .left_box {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #46C9B3;
+    border-radius: 22rpx;
+    height: 150rpx;
+}
+
+.left_box .title .titile_name {
+    font-weight: 650;
+    font-size: 35rpx;
+    color: #fff;
+}
+
+.left_box .title .titile_desc {
+    margin-left: 10rpx;
+    color: #fff;
+    margin-top: 15rpx;
+    font-size: 25rpx;
+}
+
+.left_box .cu-tag {
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    margin-bottom: 15rpx;
+    background-color: #79dac9 !important;
+}
+
+.right_box .cu-tag {
+    margin-top: 15rpx;
+    margin-left: 10rpx;
+    margin-bottom: 15rpx;
+    background-color: #9cc1fc !important;
+}
+
+.left_box image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+}
+
+.top_box .right_box {
+    width: 47%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #468AF5;
+    border-radius: 22rpx;
+    height: 150rpx;
+}
+
+.right_box .title .titile_name {
+    font-weight: 650;
+    font-size: 35rpx;
+    color: #fff;
+}
+
+.right_box .title .titile_desc {
+    color: #fff;
+    margin-top: 15rpx;
+    margin-left: 10rpx;
+    font-size: 25rpx;
+}
+
+.right_box image {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+}
+
+.cu-list {
+    margin-left: 10rpx !important;
+    margin-right: 10rpx !important;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.list_comment {
+    color: rgb(61, 61, 61);
+    margin-left: 20rpx;
+    font-size: 35rpx;
+    line-height: 50rpx;
+}
+
+.icon_list {
+    color: #4865F1;
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
+
+.grids {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grids .grid_item {
+    width: 23%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 20rpx;
+    margin-bottom: 15rpx;
+}
+
+.grids .grid_item image {
+    margin: 0 auto;
+    display: block;
+    padding: 15rpx;
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 16rpx;
+}
+
+.grids .grid_item text {
+    display: block;
+    text-align: center;
+    font-size: 25rpx;
+    padding-bottom: 10rpx;
+}
+
+.grids_box {
+    width: 98%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16rpx;
+    margin-bottom: 15rpx;
+}
+
+.grids_box .title {
+    padding-top: 10rpx;
+    padding-left: 35rpx;
+    font-size: 35rpx;
+    font-weight: 650;
+}
+
+.cu-item {
+    border-radius: 22rpx;
+}

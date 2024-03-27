@@ -1,0 +1,10 @@
+<van-collapse value="{{ activeNames }}" size bind:change="changeItem">
+                <block wx:for="{{GuidanceData}}" wx:key="index">
+                    <van-collapse-item title="{{item.title}}">
+                        <view class="item_box">
+                          <text>{{item.content}}</text>
+                          
+                        </view>
+                    </van-collapse-item>
+                </block>
+            </van-collapse>

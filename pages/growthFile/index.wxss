@@ -1,0 +1,115 @@
+page {
+    background-color: #F7F7F7;
+}
+
+.top_image {
+    position: relative;
+    width: 100%;
+}
+
+.top_image image {
+    margin: 0 auto;
+    width: 100%;
+    height: 350rpx;
+}
+
+.user_info {
+    position:absolute ;
+    top: 250rpx;
+    width: 96%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 16rpx;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+  
+}
+
+.user_info .avatar {
+    padding: 15rpx;
+}
+
+.user_info .avatar image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.user_info .info {
+    margin-left: 25rpx;
+    padding: 15rpx;
+}
+
+.user_info .info .name {
+    font-size: 40rpx;
+    font-weight: 700;
+    color: deepskyblue;
+}
+
+.info .name view {
+    margin-left: 20rpx;
+    padding: 10rpx;
+}
+
+.user_info .info .account {
+    font-size: 40rpx;
+    color: #0055f1;
+
+}
+
+.user_info .info .classname {
+    margin-top: 10rpx;
+    font-size: 35rpx;
+}
+.box_content{
+    margin-top: 80rpx;
+}
+
+.content_box {
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 15rpx;
+    background-color: #FFFFFF;
+    border-radius: 20rpx;
+}
+.content_box .cu-item{
+    border-radius: 20rpx;
+}
+.content_box .cu-timeline {
+    border-radius: 20rpx !important;
+}
+
+.content_box .cu-timeline image {
+    margin-top: 10rpx;
+    width: 300rpx;
+    height: 220rpx;
+}
+
+.content_box .content {
+    background-color: #e6ecec !important;
+}
+
+/* 发布按钮 */
+
+/* 提交按钮 */
+
+.submit_box {
+    padding: 10rpx;
+    position: fixed;
+    right: 0rpx;
+    bottom: 100rpx;
+    background-color: #ffffff;
+    border-radius: 16rpx;
+
+}
+
+.submit_box .upload image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.submit_box .upload view {
+    font-size: 30rpx;
+    text-align: center;
+}

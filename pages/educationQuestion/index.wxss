@@ -1,0 +1,165 @@
+.van-popup {
+    border-radius: 22rpx;
+}
+
+.swiper-container{
+    height: 165rpx;
+}
+
+.top_info_box {
+    padding-bottom: 10rpx;
+    width: 98%;
+    margin: 0 auto;
+    background-color: #EAF8FF;
+    border-radius: 22rpx;
+    margin-top: 5rpx;
+    background-image: url("https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/educationQuestion_bcg.png");
+}
+
+.top_info_box .top_desc_box {
+    width: 20%;
+    padding: 10rpx;
+    background-color: #11ACFF;
+    border-top-left-radius: 22rpx;
+    border-bottom-right-radius: 22rpx;
+}
+
+.top_info_box .top_desc_box text {
+    font-weight: 700;
+    color: white;
+}
+
+.top_info_box .middle_desc_box {
+    display: flex;
+    align-items: center;
+    padding-left: 10rpx;
+    padding-top: 10rpx;
+}
+
+.top_info_box .middle_desc_box .info_content {
+    margin-left: 10rpx;
+}
+
+.dot {
+    width: 15rpx;
+    height: 15rpx;
+    background-color: #01A6FE;
+    border-radius: 50%;
+}
+
+.cu-bar {
+    margin: 0 auto;
+    width: 98%;
+    border-radius: 22rpx;
+    margin-top: 10rpx;
+}
+
+/* 列表盒子 */
+.teacher_box {
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 22rpx;
+    background-color: #FFFFFF;
+    margin-top: 5rpx;
+}
+
+.teacher_box .top_content {
+    display: flex;
+    align-items: center;
+    height: 150rpx;
+}
+
+.top_content .left_image {
+    width: 20%;
+    border-radius: 22rpx;
+}
+
+.top_content .left_image image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-left: 10rpx;
+    margin-top: 20rpx;
+    border-radius: 22rpx;
+}
+
+.middle_desc {
+    width: 50%;
+    margin-left: 20rpx;
+}
+
+.middle_desc .top_name {
+    display: flex;
+    align-items: center;
+}
+
+.middle_desc .top_name .name {
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+
+
+.middle_desc .middle_info {
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+    color: gray;
+    font-size: 30rpx;
+}
+
+.teacher_box .top_content .right_desc {
+    width: 30%;
+    margin-left: 10rpx;
+}
+
+.teacher_box .top_content .right_desc button {
+    width: 180rpx;
+    font-size: 20rpx;
+}
+
+.teacher_box .middle_descs {
+    display: flex;
+    align-items: center;
+    margin-top: 20rpx;
+    padding-bottom: 10rpx;
+}
+
+/* 通知详情内容 */
+.notice_box {
+    margin: 0 auto;
+    margin-left: 20rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+
+}
+.notice_box .notice_title{
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+.notice_box .time_title{
+    text-align: center;
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+/* 预约 */
+.resverbox{
+    background-color: aqua;
+    border-radius: 22rpx;
+    padding: 10rpx;
+}
+.resverbox .name{
+    display: flex;
+    
+}
+.resverbox .name .right_delete{
+    position: absolute;
+    right: 50rpx;
+    background-color: red;
+    border-radius: 22rpx;
+    padding: 5rpx;
+    color: #fff;
+}

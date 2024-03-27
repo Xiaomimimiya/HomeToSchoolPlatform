@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "van-notice-bar": "/components/vantui/notice-bar/index"
+    },
+    "navigationBarTitleText": "好礼兑换"
+    
+}

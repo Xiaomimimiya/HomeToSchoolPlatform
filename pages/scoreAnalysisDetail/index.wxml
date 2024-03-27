@@ -1,0 +1,53 @@
+<scroll-view>
+    <view class="top_title">
+        <view class="class_name">
+            <text>{{details.username}}同学{{title}}学情分析</text>
+        </view>
+    </view>
+    <view class="score_box">
+        <view class="top_content">
+            <view class="total">
+                总分：<text class="commen">{{total_Score}}</text>分
+            </view>
+            <view class="class_ange">
+                班级<text class="commen"> {{details.ranking}} </text>名
+            </view>
+            <view class="class_ange">
+                年级<text class="commen"> {{details.ranking}} </text>名
+            </view>
+        </view>
+        <view class="score_detail">
+            <block wx:for="{{scoreArray}}" wx:key="index">
+                <view class="score_item">
+                    <view class="subject">
+                        <text>{{item[0]}}</text>
+                    </view>
+                    <view class="value">
+                        <view class="value_item">
+                            <text style="color: #0501f7" wx:if="{{item[1]>=90}}">优秀</text>
+                            <text style="color: #9B58B5" wx:elif="{{item[1]>=80}}">良好</text>
+                            <text style="color: #E77D25" wx:elif="{{item[1]>=60}}">及格</text>
+                            <text style="color: red;" wx:else>不及格</text>
+                        </view>
+                    </view>
+                    <view class="score">
+                        <view class="score_item">
+                            <text>{{item[1]}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="chart_score">
+        <canvas canvas-id="barChart" style="height:400rpx;"></canvas>
+    </view>
+    <view class="analysis_box">
+        <view class="teacher_value">
+            <text>考试评价</text>
+        </view>
+        <view class="analysis_content">
+            <text>{{details.analysis}}</text>
+        </view>
+    </view>
+</scroll-view>

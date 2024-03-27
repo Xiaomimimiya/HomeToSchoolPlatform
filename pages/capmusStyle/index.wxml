@@ -1,0 +1,252 @@
+<wxs src="../../utils/util.wxs" module="filters" />
+<view class="top_image">
+    <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/school.png" mode="" />
+</view>
+
+<view class="cu-list grid col-3 border">
+    <view class="cu-item" bindtap="showPopup" data-id="popup1">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/campusStyleIcon/desc.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>学校简介</text>
+        </view>
+    </view>
+    <view class="cu-item" bindtap="showPopup" data-id="popup2">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/campusStyleIcon/landscape.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>校园风光</text>
+        </view>
+    </view>
+    <view class="cu-item" bindtap="showPopup" data-id="popup3">
+        <view class="grid_images">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/campusStyleIcon/history.png" mode="" />
+        </view>
+        <view class="grid_text">
+            <text>校史展馆</text>
+        </view>
+    </view>
+
+</view>
+<view class="cu-bar bg-white margin-top-xs">
+    <view class="action border-title">
+        <text class="text-xl text-bold text-blue">师资力量</text>
+        <text class="bg-gradual-blue" style="width:3rem"></text>
+    </view>
+    <view class="right_text" bindtap="showPopup" data-id="popup4">
+        <text>查看更多</text>
+        <image class="arrow_image" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/comm_icon/arrow-right.png" mode="" />
+    </view>
+</view>
+
+<view class="teacher_box">
+    <view class="teacher_item">
+        <view class="top_image">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/school_image/teacher_test.png" mode="" />
+        </view>
+        <view class="middle_name">
+            <text>陈老师</text>
+        </view>
+    </view>
+    <view class="teacher_item">
+        <view class="top_image">
+            <image src="cloud://home-platform-0gpmrg4uda95ceae.686f-home-platform-0gpmrg4uda95ceae-1308239074/cloudbase-cms/upload/2024-03-08/2.png" mode="" />
+        </view>
+        <view class="middle_name">
+            <text>刘老师</text>
+        </view>
+    </view>
+    <view class="teacher_item">
+        <view class="top_image">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/school_image/teacher_test.png" mode="" />
+        </view>
+        <view class="middle_name">
+            <text>吴老师</text>
+        </view>
+    </view>
+    <view class="teacher_item">
+        <view class="top_image">
+            <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/school_image/teacher_test.png" mode="" />
+        </view>
+        <view class="middle_name">
+            <text>王老师</text>
+        </view>
+    </view>
+</view>
+<view class="cu-bar bg-white margin-top-xs">
+    <view class="action border-title">
+        <text class="text-xl text-bold text-green">办学成绩</text>
+        <text class="bg-gradual-green" style="width:3rem"></text>
+    </view>
+    <view class="right_text" bindtap="showPopup" data-id="popup5">
+        <text>查看更多</text>
+        <image class="arrow_image" src="https://videoclassdemo.oss-cn-hangzhou.aliyuncs.com/hometest/images/comm_icon/arrow-right.png" mode="" />
+    </view>
+</view>
+
+<scroll-view>
+    <block wx:for="{{newsData}}" wx:key="index">
+        <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+            <view class="left">
+                <view class="left_top_desc">
+                    <text>{{item.title}}</text>
+                </view>
+                <view class="left_bottom_desc">
+                    <view class="department">
+                        <text>{{item.senduser}}</text>
+                    </view>
+                    <view class="send_time">
+                        <text>{{filters.formatXie(item._createTime)}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="right">
+                <image src="{{item.cover}}" mode="" />
+            </view>
+        </view>
+    </block>
+</scroll-view>
+
+
+
+<van-popup show="{{popup1.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup1">
+    <view class="schood_desc_box">
+        <view class="top_desc">
+            <view class="top_name">
+                <text>广州市xxxx中学</text>
+            </view>
+            <view class="top_info">
+                <text>1964年 创办 | 公办学校 | 广州市,xxx区</text>
+            </view>
+            <view class="top_icon">
+                <block wx:for="{{3}}" wx:key="index">
+                    <view class='cu-tag radius line-cyan'>
+                        <text>全龄段多元化{{index+1}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="padding-xs bg-white solid-bottom"></view>
+
+        <view class="middle_desc">
+            <view class="desc_one desc_comm">
+                <text>校训：博雅敦毅，峥嵘至善</text>
+            </view>
+            <view class="desc_two desc_comm">
+                <text>办学历史：60年</text>
+            </view>
+            <view class="desc_three desc_comm">
+                <text>在校人数：2400人</text>
+                <text style="margin-left: 30rpx;">班级：50个</text>
+            </view>
+        </view>
+        <view class="addres_site">
+            <text style="margin-left:10rpx;" class="lg text-lg cuIcon-location"></text>
+            <text style="margin-left:30rpx;">广东省广州市xxx区xxx路xxx号</text>
+        </view>
+    </view>
+    <view class="schood_desc_box">
+        <view class="desc_info">
+            <text>自1962年创立以来，春华中学已走过了辉煌而坚实的六十年历程。这所坐落于华夏大地心脏地带的学府，在岁月流转中不断积淀、创新和成长。
+                初创与奠基（1962-1982）
+                春华中学于1962年在响应国家大力发展基础教育的号召下应运而生。初创时期，学校凭借艰苦奋斗的精神，克服了物质条件匮乏的困难，逐步完善教学设施，建立了严谨有序的教学秩序。首任校长李春晖先生以其先进的教育理念，提出了“育人为本，全面发展”的办学宗旨，为春华中学奠定了坚实的基础。
+                改革与发展（1983-2002）
+                进入八十年代，随着改革开放的春风拂面，春华中学紧随时代步伐，开始全面深化改革。学校启动课程体系优化工程，增设各类特色课程，鼓励学生多元发展，并引入现代化的教学手段。这一时期，春华中学成为区域内率先实施素质教育的先行者，培养出了一批批德才兼备的优秀毕业生。
+                跨越与腾飞（2003-2022）
+                跨入新世纪，春华中学步入了高速发展的快车道。通过扩建校园、更新硬件设施，建成了多功能综合楼、数字化图书馆、一流实验室等先进教学场所。同时，学校加强师资队伍建设，引进国内外高层次人才，打造了一支师德高尚、业务精湛的教师团队。秉持“求真、务实、创新”的校训，春华中学积极探索现代教育模式，实行小班化教学、个性化辅导，实现了教育教学质量的显著提升。
+                新时代的使命与展望（2023及未来）
+                迈入新时代，春华中学在继承优良传统的基础上，紧跟科技发展潮流，大力推广智慧教育，实践“互联网+教育”，并积极参与国际教育交流与合作项目。学校积极开展生涯规划教育，关注每一个学生的个性成长，致力于培养具有家国情怀、全球视野、创新能力的新时代青年。
+                历经六十年风雨洗礼，春华中学始终坚守教育初心，砥砺前行，弦歌不辍。每一座矗立的建筑、每一片绿茵球场、每一次掌声雷动的毕业典礼，都是对这段流金岁月的最佳见证。如今的春华中学，正站在新的历史起点上，向着建设全国乃至世界一流的现代化中学目标坚定迈进。</text>
+        </view>
+    </view>
+
+</van-popup>
+
+<van-popup show="{{popup2.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup2">
+  
+    <van-tabs active="{{ active }}">
+        <van-tab title="校园景观">
+            <view class="ablum_box">
+                <block wx:for="{{ablumData}}" wx:key="index">
+                    <view class="class_ablum">
+                        <view class="class_ablum_box">
+                            <image src="{{item.image}}" mode="" />
+                            <text>{{item.name}}</text>
+                        </view>
+                        <view class="margin-tb-sm text-center">
+                            <button class="cu-btn round line-blue" bindtap="goAblum" data-id="{{item._id}}">立即浏览</button>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </van-tab>
+        <van-tab title="校园地图">
+
+        </van-tab>
+    </van-tabs>
+</van-popup>
+
+<van-popup show="{{popup3.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup3">
+    <view class="margin-tb-sm text-center">
+        <button class="cu-btn round bg-blue">学校发展历史</button>
+    </view>
+    <view class="class_box">
+        <block wx:for="{{4}}" wx:key="index">
+            <view class="class_item" bindtap="goDetail">
+
+                <view class="top_content">
+                    <!-- <image src="https://hometoschool.oss-cn-shenzhen.aliyuncs.com/comm_image/class.png" mode="" /> -->
+                    <image bindtap="previewImage" src="cloud://home-platform-0gpmrg4uda95ceae.686f-home-platform-0gpmrg4uda95ceae-1308239074/history_image/1.jpg" mode="" data-item="{{item}}" />
+                </view>
+                <view class="middle_content">
+                    <view class="class_name">
+                        <text>{{item_list[index]}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</van-popup>
+
+<!-- 下面两个 -->
+<van-popup show="{{popup4.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup4">
+    <view class="class_box">
+
+        <view class="class_item" bindtap="goDetail">
+            <view class="top_content">
+                <image bindtap="previewImage" src="{{item}}" mode="" data-item="{{item}}" />
+            </view>
+            <view class="middle_content">
+                <view class="class_name">
+                    <text>xxx老师{{index+1}}</text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</van-popup>
+<van-popup show="{{popup5.show}}" position="bottom" close-on-click-overlay="false" custom-style="height: 80%" bind:close="onClose" data-id="popup5">
+    <view class="moreNewsBox">
+        <block wx:for="{{moralData}}" wx:key="index">
+            <view class="news_box" bindtap="goNewsDetail" data-id="{{item._id}}">
+                <view class="left">
+                    <view class="left_top_desc">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="left_bottom_desc">
+
+                        <view class="send_time">
+                            <text>{{filters.formatXie(item._createTime)}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="right">
+                    <image src="{{item.cover}}" mode="" />
+                </view>
+            </view>
+        </block>
+
+    </view>
+</van-popup>

@@ -1,0 +1,22 @@
+<view class="logo margin-top">
+    <image src="{{userInfo.useravatar}}" class="animation-scale-up" style="animation-delay: 0.4s;"></image>
+    <text class="userinfo-nickname">{{userInfo.username}}</text>
+</view>
+
+<view class="infobox">
+    <van-cell-group>
+        <van-field size="large" label="性别" value="{{ userInfo.sex }}" readonly input-align="middle" reading />
+        <van-field size="large" label="班级" value="{{ userInfo.classname }}" readonly input-align="middle" reading />
+        <van-field size="large" label="学号" value="{{ userInfo.usernumber }}" readonly input-align="middle" reading />
+        <van-field size="large" label="入学时间" value="{{ userInfo.in_school }}" readonly input-align="middle" reading />
+        <van-field size="large" label="账号类型" value="{{ userInfo.usertype }}" readonly input-align="middle" reading />
+        <form catchsubmit="publish">
+            <view class="cu-form-group margin-top">
+                <view class="title">密码修改</view>
+                <input password placeholder="输入您要修改的密码" name="password"></input>
+                <button class='cu-btn bg-blue' size="mini" formType="submit">修改密码</button>
+            </view>
+        </form>
+
+    </van-cell-group>
+</view>

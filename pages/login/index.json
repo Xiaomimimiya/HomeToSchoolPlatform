@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-popup":"/components/vantui/popup/index"
+    },
+    "navigationBarTitleText": "登录"
+}
