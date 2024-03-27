@@ -1,2 +1,2 @@
 # HomtToSchoolPlatform
-毕业设计仓库
+毕业设计主要代码 
